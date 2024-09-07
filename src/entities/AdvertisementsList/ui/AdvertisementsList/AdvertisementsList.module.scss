@@ -1,0 +1,7 @@
+.AdvertisementsList {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	gap: var(--small-indent);
+	width: var(--app-width);
+}

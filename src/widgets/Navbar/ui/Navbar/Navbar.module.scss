@@ -1,0 +1,9 @@
+.Navbar {
+	background-color: var(--dark-gray-bg-color);
+	height: 40px;
+	display: flex;
+	gap: var(--medium-indent);
+	padding-left: var(--medium-indent);
+	align-items: center;
+	border-radius: var(--small-round);
+}

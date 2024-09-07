@@ -13,10 +13,30 @@ export const AdvertisementsItem = memo((props: AdvertisementsItemProps) => {
 		className,
 		advertisement
 	} = props;
-    
+
 	return (
 		<div className={classNames(cls.AdvertisementsItem, {}, [className])}>
-			{advertisement.name}
+			<div
+				className={cls.imageWrapper}
+			>
+				{/* TODO прикрутить проверку на изображение */}
+				<img
+					className={cls.image}
+					src={advertisement.imageUrl}
+					alt={advertisement.name}
+				/>
+			</div>
+
+			{/* TODO добавить валидацию на длину для всех полей */}
+			<div className={cls.name}>{advertisement.name}</div>
+
+			<div className={cls.price}>{advertisement.price}₽</div>
+
+			<div className={cls.additionalInfo}>
+				<div className={cls.likes}>{advertisement.likes}</div>
+				<div className={cls.views}>{advertisement.views}</div>
+			</div>
+
 		</div>
 	);
 });

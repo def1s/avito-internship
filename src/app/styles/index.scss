@@ -1,5 +1,14 @@
 @import "reset";
+@import "./variables/global";
+@import "./fonts/montserrat";
+
+body {
+    font-family: var(--font-family-main), sans-serif;
+}
 
 .App {
     min-height: 100vh; // растягивание контента в App на всю высоту
+    max-width: var(--app-width);
+    margin: 0 auto;
+    padding-top: var(--medium-indent);
 }

@@ -7,7 +7,6 @@ const App = () => {
 	return (
 		<div className={'App'}>
 			<Navbar/>
-			Hello, avito!
 			<AppRouter/>
 		</div>
 	);

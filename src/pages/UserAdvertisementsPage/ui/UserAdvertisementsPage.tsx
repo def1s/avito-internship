@@ -14,8 +14,6 @@ const UserAdvertisementsPage = memo((props: UserAdvertisementsPageProps) => {
     
 	return (
 		<div className={classNames(cls.UserAdvertisementsPage, {}, [className])}>
-			Страница списка объявлений
-
 			<UserAdvertisements/>
 		</div>
 	);
