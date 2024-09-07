@@ -19,7 +19,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
 				}
 				keysToRemove = [];
 			}
-			// ругается на то, что state имеет поля, которые могут быть undefined, подумать над решением
+			// @ts-expect-error ругается на то, что state имеет поля, которые могут быть undefined, подумать над решением
 			return combinedReducer(state, action);
 		},
 

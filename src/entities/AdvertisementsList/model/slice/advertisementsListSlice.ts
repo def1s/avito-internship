@@ -1,9 +1,10 @@
 import { AdvertisementsListSchema } from '../types/advertisementsListSchema';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchAdvertisements } from '../services/fetchAdvertisements/fetchAdvertisements';
+import { IAdvertisement } from 'shared/types';
 
 const initialState: AdvertisementsListSchema = {
-	data: [],
+	advertisements: [],
 	isLoading: false
 };
 
@@ -18,9 +19,9 @@ const advertisementsListSlice = createSlice({
 			state.error = undefined;
 			state.isLoading = true;
 		});
-		builder.addCase(fetchAdvertisements.fulfilled, (state, action) => {
+		builder.addCase(fetchAdvertisements.fulfilled, (state, action: PayloadAction<IAdvertisement[]>) => {
 			state.isLoading = false;
-			state.data = action.payload;
+			state.advertisements = action.payload;
 		});
 		builder.addCase(fetchAdvertisements.rejected, (state, action) => {
 			state.isLoading = false;

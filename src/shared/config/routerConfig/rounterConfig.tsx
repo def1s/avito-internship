@@ -1,7 +1,7 @@
 import { RouteProps } from 'react-router-dom';
 import { AdvertisementPage } from 'pages/AdvertisementPage';
-import { AdvertisementsListPage } from 'pages/AdvertisementsListPage';
-import { OrdersListPage } from 'pages/OrdersListPage';
+import { AdvertisementsListPage } from 'pages/UserAdvertisementsPage';
+import { OrdersListPage } from 'pages/UserOrdersPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 
 export enum Routes {

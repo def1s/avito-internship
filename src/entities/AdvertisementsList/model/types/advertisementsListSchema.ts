@@ -1,7 +1,7 @@
 import { IAdvertisement } from 'shared/types';
 
 export interface AdvertisementsListSchema {
-	data: IAdvertisement[];
+	advertisements: IAdvertisement[];
 	isLoading: boolean;
 	error?: string;
 }

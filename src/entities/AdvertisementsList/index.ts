@@ -7,8 +7,8 @@ export { AdvertisementsList } from './ui/AdvertisementsList/AdvertisementsList';
 export { fetchAdvertisements } from './model/services/fetchAdvertisements/fetchAdvertisements';
 
 export {
-	getAdvertisementsListData
-} from './model/selectors/getAdvertisementsListData/getAdvertisementsListData';
+	getAdvertisementsListAdvertisements
+} from './model/selectors/getAdvertisementsListAdvertisements/getAdvertisementsListAdvertisements';
 
 export {
 	getAdvertisementsListIsLoading

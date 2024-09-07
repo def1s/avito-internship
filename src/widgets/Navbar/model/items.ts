@@ -8,7 +8,7 @@ export interface NavbarItemType {
 export const navbarItemsList: NavbarItemType[] = [
 	{
 		path: RoutesPaths.advertisementList,
-		text: 'Мои объявления'
+		text: 'Объявления'
 	},
 	{
 		path: RoutesPaths.ordersList,
