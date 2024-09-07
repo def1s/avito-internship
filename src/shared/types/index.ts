@@ -1,0 +1,1 @@
+export { IAdvertisement } from './advertisementTypes';
