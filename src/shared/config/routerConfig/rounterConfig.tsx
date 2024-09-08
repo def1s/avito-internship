@@ -1,8 +1,10 @@
 import { RouteProps } from 'react-router-dom';
+/* eslint-disable @conarti/feature-sliced/layers-slices */
 import { AdvertisementPage } from 'pages/AdvertisementPage';
-import { AdvertisementsListPage } from 'pages/UserAdvertisementsPage';
-import { OrdersListPage } from 'pages/UserOrdersPage';
+import { AdvertisementsListPage } from 'pages/AdvertisementsPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
+import { OrdersListPage } from 'pages/OrdersPage';
+/* eslint-enable @conarti/feature-sliced/layers-slices */
 
 export enum Routes {
 	ADVERTISEMENT = 'advertisement',

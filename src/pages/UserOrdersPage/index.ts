@@ -1,1 +1,0 @@
-export { UserOrdersPageAsync as OrdersListPage } from './ui/UserOrdersPage.async';

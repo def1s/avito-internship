@@ -12,7 +12,7 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
     "@chromatic-com/storybook": "^1.9.0",
+    "@conarti/eslint-plugin-feature-sliced": "^1.0.5",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -31,6 +32,7 @@
     "@storybook/react": "^8.2.9",
     "@storybook/react-webpack5": "^8.2.9",
     "@storybook/test": "^8.2.9",
+    "@svgr/webpack": "^8.1.0",
     "@types/dotenv-defaults": "^2.0.4",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.57",
@@ -43,6 +45,7 @@
     "css-loader": "^6.10.0",
     "dotenv-webpack": "^8.1.0",
     "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-storybook": "^0.8.0",

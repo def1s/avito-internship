@@ -1,8 +1,8 @@
-import cls from './OrdersList.module.scss';
 import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IOrder } from 'shared/types';
-import { OrdersItem } from 'entities/OrdersList/ui/OrdersItem/OrdersItem';
+import { OrdersItem } from '../OrdersItem/OrdersItem';
+import cls from './OrdersList.module.scss';
 
 interface OrdersListProps {
     className?: string;

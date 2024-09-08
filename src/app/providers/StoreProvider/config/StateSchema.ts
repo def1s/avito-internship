@@ -1,10 +1,12 @@
 import { Action, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import { AdvertisementDetailsSchema } from 'entities/AdvertisementDetails';
 import { AdvertisementsListSchema } from 'entities/AdvertisementsList';
 import { OrdersListSchema } from 'entities/OrdersList';
 
 export interface StateSchema {
 	advertisementsList?: AdvertisementsListSchema;
 	ordersList?: OrdersListSchema;
+	advertisementDetails?: AdvertisementDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

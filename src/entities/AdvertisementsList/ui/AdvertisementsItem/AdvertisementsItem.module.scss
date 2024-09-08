@@ -1,32 +1,50 @@
 .AdvertisementsItem {
 	width: 200px;
-}
+	text-decoration: none;
 
-.imageWrapper {
-	width: 100%;
-	height: 200px;
-	position: relative;
-	background-color: var(--mid-gray-bg-color);
-
-	.image {
+	.imageWrapper {
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		height: 200px;
+		position: relative;
+		background-color: var(--mid-gray-bg-color);
+
+		.image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.notFoundIcon {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
-}
 
-.name {
-	color: var(--blue-color);
-	font-weight: bold;
-	margin-top: 2px;
-}
+	.name {
+		color: var(--blue-color);
+		font-weight: bold;
+		margin-top: 2px;
+	}
 
-.price {
-	font-weight: 500;
-	margin-top: 2px;
-}
+	.price {
+		font-weight: 500;
+		margin-top: 2px;
+		color: #000;
+	}
 
-.additionalInfo {
-	display: flex;
-	margin-top: 2px;
+	.additionalInfo {
+		display: flex;
+		margin-top: 2px;
+		color: #000;
+	}
+
+	&:visited {
+		.name {
+			color: var(--visited-color);
+		}
+	}
 }

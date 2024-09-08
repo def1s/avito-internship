@@ -1,7 +1,7 @@
-import { AdvertisementsListSchema } from '../types/advertisementsListSchema';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchAdvertisements } from '../services/fetchAdvertisements/fetchAdvertisements';
 import { IAdvertisement } from 'shared/types';
+import { fetchAdvertisements } from '../services/fetchAdvertisements/fetchAdvertisements';
+import { AdvertisementsListSchema } from '../types/advertisementsListSchema';
 
 const initialState: AdvertisementsListSchema = {
 	advertisements: [],

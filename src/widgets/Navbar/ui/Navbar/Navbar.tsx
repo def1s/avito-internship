@@ -1,8 +1,8 @@
-import cls from './Navbar.module.scss';
 import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { navbarItemsList } from '../../model/items';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;

@@ -1,8 +1,8 @@
-import cls from './AdvertisementsList.module.scss';
 import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IAdvertisement } from 'shared/types';
-import { AdvertisementsItem } from 'entities/AdvertisementsList/ui/AdvertisementsItem/AdvertisementsItem';
+import { AdvertisementsItem } from '../AdvertisementsItem/AdvertisementsItem';
+import cls from './AdvertisementsList.module.scss';
 
 interface AdvertisementsListProps {
     className?: string;

@@ -1,8 +1,8 @@
-import { BuildWebpackConfig } from './config/build/buildWebpackConfig';
-import { BuildMode, BuildPaths } from './config/build/types/config';
+import * as process from 'node:process';
 import path from 'path';
 import webpack from 'webpack';
-import * as process from 'node:process';
+import { BuildWebpackConfig } from './config/build/buildWebpackConfig';
+import { BuildMode, BuildPaths } from './config/build/types/config';
 import 'dotenv-defaults/config';
 
 export default () => {

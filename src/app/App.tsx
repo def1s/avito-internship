@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/index.scss';
-import { AppRouter } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
+import { AppRouter } from './providers/router';
 
 const App = () => {
 	return (

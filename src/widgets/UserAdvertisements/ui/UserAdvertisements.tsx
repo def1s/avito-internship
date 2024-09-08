@@ -1,6 +1,4 @@
-import cls from './UserAdvertisements.module.scss';
 import { memo, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
 import {
 	AdvertisementsList,
@@ -10,8 +8,10 @@ import {
 	getAdvertisementsListError,
 	getAdvertisementsListIsLoading
 } from 'entities/AdvertisementsList';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import cls from './UserAdvertisements.module.scss';
 
 interface UserAdvertisementsProps {
     className?: string;

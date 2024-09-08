@@ -1,0 +1,54 @@
+.AdvertisementDetails {
+	width: var(--app-width);
+	background-color: var(--app-bg-color);
+	border-radius: var(--medium-round);
+	padding: var(--medium-indent);
+	box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+
+	.imageWrapper {
+		width: 500px;
+		max-height: 500px;
+		overflow: hidden;
+		border-radius: var(--small-round);
+		margin-bottom: var(--medium-indent);
+	}
+
+	.image {
+		width: 100%;
+		height: auto;
+		object-fit: fill;
+	}
+
+	.info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: var(--medium-indent);
+	}
+
+	.title {
+		font: var(--font-l);
+		color: var(--dark-gray-bg-color);
+	}
+
+	.price {
+		font: var(--font-xl);
+		color: var(--green-color);
+	}
+
+	.description {
+		font: var(--font-m);
+		color: var(--dark-gray-bg-color);
+		margin-bottom: var(--medium-indent);
+	}
+
+	.meta {
+		font: var(--font-m);
+		color: var(--mid-gray-bg-color);
+
+		p {
+			margin: 0;
+			margin-bottom: var(--small-indent);
+		}
+	}
+}

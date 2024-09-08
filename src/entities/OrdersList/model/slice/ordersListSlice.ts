@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { OrdersListSchema } from '../types/ordersListSchema';
-import { fetchOrders } from '../services/fetchOrders/fetchOrders';
 import { IOrder } from 'shared/types';
+import { fetchOrders } from '../services/fetchOrders/fetchOrders';
+import { OrdersListSchema } from '../types/ordersListSchema';
 
 const initialState: OrdersListSchema = {
 	orders: [],

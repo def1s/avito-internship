@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IAdvertisement } from 'shared/types';
 import axios from 'axios';
+import { IAdvertisement } from 'shared/types';
 
 export const fetchAdvertisements =
 	createAsyncThunk<IAdvertisement[], void, { rejectValue: string }>

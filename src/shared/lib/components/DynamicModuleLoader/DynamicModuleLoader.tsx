@@ -1,7 +1,8 @@
-import { ReactNode, useEffect } from 'react';
-import { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider';
 import { Reducer } from '@reduxjs/toolkit';
+import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
+import { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider';
 
 export type ReducersList = {
 	[name in StateSchemaKey]?: Reducer;

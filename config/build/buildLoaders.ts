@@ -1,6 +1,5 @@
-import { BuildOptions } from './types/config';
 import { buildScssLoader } from './loaders/buildScssLoader';
-
+import { BuildOptions } from './types/config';
 
 export const BuildLoaders = ({ isDev }: BuildOptions) => {
 
@@ -23,9 +22,16 @@ export const BuildLoaders = ({ isDev }: BuildOptions) => {
 		}
 	};
 
+	const svgLoader = {
+		test: /\.svg$/i,
+		issuer: /\.[jt]sx?$/,
+		use: ['@svgr/webpack'],
+	};
+
 	return [
+		svgLoader,
 		babelLoader,
 		tsLoader,
-		scssLoader,
+		scssLoader
 	];
 };

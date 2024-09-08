@@ -1,4 +1,4 @@
-import { IAdvertisement } from 'shared/types/advertisementTypes';
+import { IAdvertisement } from './advertisementTypes';
 
 export type IOrderItem = IAdvertisement & { count: number; };
 

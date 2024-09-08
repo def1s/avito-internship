@@ -1,8 +1,9 @@
-import cls from './OrdersItem.module.scss';
 import { memo, useState } from 'react';
+import NotFoundIcon from 'shared/assets/icons/not_found.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IOrder, IOrderStatus } from 'shared/types';
 import { Button } from 'shared/ui/Button';
+import cls from './OrdersItem.module.scss';
 
 interface OrdersItemProps {
     className?: string;
@@ -74,11 +75,17 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 						<div key={index} className={cls.itemDetail}>
 
 							<div className={cls.imageWrapper}>
-								<img
-									src={item.imageUrl}
-									alt={item.name}
-									className={cls.image}
-								/>
+								{
+									item.imageUrl ?
+										<img
+											src={item.imageUrl}
+											alt={item.name}
+											className={cls.image}
+										/> :
+										<NotFoundIcon
+											className={cls.notFoundIcon}
+										/>
+								}
 							</div>
 
 							<span>{item.name}</span> - <span>Кол-во: {item.count}</span>

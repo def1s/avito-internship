@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IOrder } from 'shared/types';
 import axios from 'axios';
+import { IOrder } from 'shared/types';
 
 export const fetchOrders =
 	createAsyncThunk<IOrder[], void, { rejectValue: string }>

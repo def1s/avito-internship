@@ -3,7 +3,14 @@ module.exports = {
 		'browser': true,
 		'es2021': true
 	},
-	'extends': ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:storybook/recommended'],
+	'extends': [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:react/recommended',
+		'plugin:react-hooks/recommended',
+		'plugin:storybook/recommended',
+		'plugin:@conarti/feature-sliced/recommended'
+	],
 	'overrides': [
 		{
 			'env': {

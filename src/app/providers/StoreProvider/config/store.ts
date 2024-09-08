@@ -1,6 +1,6 @@
-import { StateSchema } from './StateSchema';
 import { configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { createReducerManager } from './reducerManager';
+import { StateSchema } from './StateSchema';
 
 export const configureReduxStore = (
 	initialState?: StateSchema,

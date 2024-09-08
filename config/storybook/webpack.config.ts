@@ -1,5 +1,5 @@
 import path from 'path';
-import webpack, { DefinePlugin } from 'webpack';
+import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import { buildScssLoader } from '../build/loaders/buildScssLoader';
 import { BuildPaths } from '../build/types/config';
 
@@ -23,6 +23,21 @@ export default ({ config }: {config: webpack.Configuration}) => {
 		__IS_DEV__: true,
 		__API_URL__: JSON.stringify('http://localhost:8080/api')
 	}));
+
+	// для работы с svg
+	// @ts-expect-error проблема с rule, может быть undefined
+	config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
+		if (/svg/.test(rule.test as string)) {
+			return { ...rule, exclude: /\.svg$/i };
+		}
+
+		return rule;
+	});
+
+	config?.module?.rules?.push({
+		test: /\.svg$/,
+		use: ['@svgr/webpack'],
+	});
 
 	return config;
 };

@@ -1,7 +1,7 @@
-import cls from './NavbarItem.module.scss';
 import { memo } from 'react';
-import { NavbarItemType } from '../../model/items';
 import { NavLink } from 'react-router-dom';
+import { NavbarItemType } from '../../model/items';
+import cls from './NavbarItem.module.scss';
 
 interface NavbarItemProps {
 	item: NavbarItemType;

@@ -1,6 +1,4 @@
-import cls from './UserOrders.module.scss';
 import { memo, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
 import {
 	fetchOrders,
@@ -10,8 +8,10 @@ import {
 	OrdersList,
 	ordersListReducer
 } from 'entities/OrdersList';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import cls from './UserOrders.module.scss';
 
 interface UserOrdersProps {
     className?: string;
