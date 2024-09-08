@@ -1,6 +1,12 @@
 .AdvertisementsItem {
 	width: 200px;
 	text-decoration: none;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: var(--light-gray-bg-color);
+		transform: translateY(-3px);
+	}
 
 	.imageWrapper {
 		width: 100%;

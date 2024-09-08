@@ -39,6 +39,7 @@ export const AdvertisementsItem = memo((props: AdvertisementsItemProps) => {
 			{/* TODO добавить валидацию на длину для всех полей */}
 			<div className={cls.name}>{advertisement.name}</div>
 
+			{/* TODO добавить разделение для отображения цены */}
 			<div className={cls.price}>{advertisement.price}₽</div>
 
 			<div className={cls.additionalInfo}>

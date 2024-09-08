@@ -1,5 +1,6 @@
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { CreateAdvertisement } from 'features/CreateAdvertisement';
 import {
 	AdvertisementsList,
 	advertisementsListReducer,
@@ -41,6 +42,7 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 			reducers={initialReducers}
 			removeAfterUnmount
 		>
+			<CreateAdvertisement/>
 
 			<div className={classNames(cls.UserAdvertisements, {}, [className])}>
 				<AdvertisementsList

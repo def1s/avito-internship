@@ -1,8 +1,9 @@
 import { memo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import NotFoundIcon from 'shared/assets/icons/not_found.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IOrder, IOrderStatus } from 'shared/types';
-import { Button } from 'shared/ui/Button';
+import { Button } from 'shared/ui/Button/Button';
 import cls from './OrdersItem.module.scss';
 
 interface OrdersItemProps {
@@ -71,8 +72,12 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 
 			{showItems && (
 				<div className={cls.itemsList}>
-					{order.items.map((item, index) => (
-						<div key={index} className={cls.itemDetail}>
+					{order.items.map((item) => (
+						<Link
+							key={item.id}
+							className={cls.itemDetail}
+							to={`/advertisements/${item.id}`}
+						>
 
 							<div className={cls.imageWrapper}>
 								{
@@ -90,7 +95,7 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 
 							<span>{item.name}</span> - <span>Кол-во: {item.count}</span>
 
-						</div>
+						</Link>
 					))}
 				</div>
 			)}

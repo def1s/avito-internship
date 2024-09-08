@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react';
 import '../../src/app/styles/index.scss';
 import { MemoryRouter } from 'react-router-dom';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 const preview: Preview = {
 	parameters: {
@@ -17,6 +18,11 @@ const preview: Preview = {
 			<MemoryRouter>
 				<Story/>
 			</MemoryRouter>
+		),
+		(Story) => (
+			<StoreProvider>
+				<Story/>
+			</StoreProvider>
 		),
 	]
 };

@@ -20,6 +20,7 @@
 	--small-indent: 8px;
 	--medium-indent: 16px;
 	--big-indent: 24px;
+	--modal-padding: 32px;
 
 	// базовые размеры
 	--normal-size: 44px;
@@ -46,4 +47,6 @@
 	--font-line-xxl: 41px;
 	--font-xxl: var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-main);
 
+	// z индексы
+	--modal-z-index: 10;
 }

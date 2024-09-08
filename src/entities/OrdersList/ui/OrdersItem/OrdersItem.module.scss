@@ -3,11 +3,11 @@
 	padding: var(--big-indent);
 	margin-bottom: 20px;
 	box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
-	 transition: transform 0.3s ease;
+	transition: transform 0.3s ease;
 
-	 &:hover {
-		transform: translateY(-5px);
-	 }
+	&:hover {
+		transform: translateY(-3px);
+	}
 
 	.header {
 		display: flex;
@@ -51,6 +51,12 @@
 			display: flex;
 			align-items: end;
 			gap: 5px;
+			text-decoration: none;
+			transition: background-color 0.2s ease;
+
+			&:hover {
+				background-color: var(--light-gray-bg-color);
+			}
 
 			.imageWrapper {
 				width: 50px;
