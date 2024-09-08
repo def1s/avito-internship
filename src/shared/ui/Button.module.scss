@@ -1,0 +1,13 @@
+.Button {
+	background-color: var(--blue-color);
+	padding: var(--small-indent) var(--medium-indent);
+	border: none;
+	color: #fff;
+	border-radius: var(--medium-round);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: #005bb5;
+	}
+}

@@ -1,22 +1,92 @@
 import cls from './OrdersItem.module.scss';
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { IOrder } from 'shared/types';
+import { IOrder, IOrderStatus } from 'shared/types';
+import { Button } from 'shared/ui/Button';
 
 interface OrdersItemProps {
     className?: string;
 	order: IOrder;
 }
 
+// TODO вынести в shared, если понадобится где-то еще
+// функция для расшифровки статусов
+const getOrderStatusText = (status: IOrderStatus): string => {
+	switch (status) {
+	case IOrderStatus.CREATED:
+		return 'Создан';
+	case IOrderStatus.PAID:
+		return 'Оплачен';
+	case IOrderStatus.TRANSPORT:
+		return 'В пути';
+	case IOrderStatus.DELIVERED_TO_THE_POINT:
+		return 'Доставлен в пункт выдачи';
+	case IOrderStatus.RECEIVED:
+		return 'Получен';
+	case IOrderStatus.ARCHIVED:
+		return 'Архивирован';
+	case IOrderStatus.REFUND:
+		return 'Возврат';
+	default:
+		return 'Неизвестный статус';
+	}
+};
+
 export const OrdersItem = memo((props: OrdersItemProps) => {
 	const {
 		className,
 		order
 	} = props;
-    
+
+	const [showItems, setShowItems] = useState(false);
+
+	const toggleShowItems = () => {
+		setShowItems((prev) => !prev);
+	};
+
+	// TODO провалидировать длину всех полей
 	return (
 		<div className={classNames(cls.OrdersItem, {}, [className])}>
-			{order.id}
+			<div className={cls.header}>
+				<span className={cls.orderNumber}>Заказ #{order.id}</span>
+				<span className={cls.status}>{getOrderStatusText(order.status)}</span>
+			</div>
+
+			<div className={cls.details}>
+				<div className={cls.item}>
+					<span>Заказ создан:</span> <span>{new Date(order.createdAt).toLocaleDateString()}</span>
+				</div>
+				<div className={cls.item}>
+					<span>Количество:</span> <span>{order.items.length}</span>
+				</div>
+				<div className={cls.item}>
+					<span>Сумма:</span> <span>${order.total}</span>
+				</div>
+			</div>
+
+			<Button onClick={toggleShowItems}>
+				{showItems ? 'Скрыть товары' : 'Показать товары'}
+			</Button>
+
+			{showItems && (
+				<div className={cls.itemsList}>
+					{order.items.map((item, index) => (
+						<div key={index} className={cls.itemDetail}>
+
+							<div className={cls.imageWrapper}>
+								<img
+									src={item.imageUrl}
+									alt={item.name}
+									className={cls.image}
+								/>
+							</div>
+
+							<span>{item.name}</span> - <span>Кол-во: {item.count}</span>
+
+						</div>
+					))}
+				</div>
+			)}
 		</div>
 	);
 });

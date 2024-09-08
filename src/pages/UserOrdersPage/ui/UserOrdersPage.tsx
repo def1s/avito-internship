@@ -14,8 +14,6 @@ const UserOrdersPage = memo((props: UserOrdersPageProps) => {
     
 	return (
 		<div className={classNames(cls.UserOrdersPage, {}, [className])}>
-			Страница списка заказов
-
 			<UserOrders/>
 		</div>
 	);
