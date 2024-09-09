@@ -1,6 +1,8 @@
 import { memo, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { formatNumber } from 'shared/lib/formatNumber/formatNumber';
 import { IAdvertisement } from 'shared/types';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import cls from './AdvertisementDetails.module.scss';
 
 interface AdvertisementDetailsProps {
@@ -26,8 +28,14 @@ export const AdvertisementDetails = memo((props: AdvertisementDetailsProps) => {
 			// TODO вставить Loader
 			return 'Загрузка...';
 		} else if (error) {
-			// TODO вставить кастомный текст
-			return 'Произошла ошибка';
+			return (
+				<Text
+					title={error}
+					text='Попробуйте перезагрузить страницу'
+					theme={TextTheme.ERROR}
+					align={TextAlign.CENTER}
+				/>
+			);
 		} else {
 			return (
 				<>
@@ -39,9 +47,10 @@ export const AdvertisementDetails = memo((props: AdvertisementDetailsProps) => {
 					{/* заголовок и цена */}
 					<div className={cls.info}>
 						<h1 className={cls.title}>{advertisement.name}</h1>
-						<p className={cls.price}>{advertisement.price} ₽</p>
+						<p className={cls.price}>{formatNumber(advertisement.price)} ₽</p>
 					</div>
 
+					{/* TODO скрывать слишком длинное описание под хайд */}
 					{/* описание */}
 					{advertisement.description && <p className={cls.description}>{advertisement.description}</p>}
 

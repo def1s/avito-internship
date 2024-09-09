@@ -5,6 +5,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { Text } from 'shared/ui/Text/Text';
 import {
 	getCreateAdvertisementFormError
 } from '../../model/selectors/getCreateAdvertisementFormError/getCreateAdvertisementFormError';
@@ -100,7 +101,7 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					onChange={onChangeDescription}
 				/>
 
-				<Button className={cls.submitBtn}>Создать объявление</Button>
+				<Button className={cls.submitBtn}>Опубликовать объявление</Button>
 			</>
 		);
 	};
@@ -115,6 +116,11 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 				className={classNames(cls.CreateAdvertisementForm, {}, [className])}
 				onSubmit={onSubmit}
 			>
+				<Text
+					title='Создание объявления'
+					text='В этой форме вы можете создать свое объявление'
+					className={cls.header}
+				/>
 				{/* TODO вставить Loader и Blur */}
 				{isLoading ? 'Загрузка...' : renderAdvertisementForm()}
 

@@ -1,0 +1,26 @@
+.title {
+	font: var(--font-xl);
+	font-weight: 700;
+}
+
+.text {
+	font: var(--font-m);
+}
+
+.error {
+	.title {
+		color: var(--red-color);
+	}
+}
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}

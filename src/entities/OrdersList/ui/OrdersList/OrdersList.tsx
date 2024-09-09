@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IOrder } from 'shared/types';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { OrdersItem } from '../OrdersItem/OrdersItem';
 import cls from './OrdersList.module.scss';
 
@@ -24,11 +25,24 @@ export const OrdersList = memo((props: OrdersListProps) => {
 			// TODO вставить Loader
 			return 'Загрузка...';
 		} else if (error) {
-			// TODO вставить компонент ошибки или кастомный текст
-			return error;
+			return (
+				<Text
+					title={error}
+					text='Попробуйте перезагрузить страницу'
+					theme={TextTheme.ERROR}
+					align={TextAlign.CENTER}
+					className={cls.error}
+				/>
+			);
 		} else if (orders.length === 0) {
-			// TODO вставить кастомный текст
-			return 'У вас еще нет заказов';
+			return (
+				<Text
+					title='У вас еще нет заказов!'
+					text='Подождите, пока кто-нибудь совершит покупку по вашему объявлению'
+					align={TextAlign.CENTER}
+					className={cls.error}
+				/>
+			);
 		} else {
 			return orders.map((order) => (
 				<OrdersItem order={order} key={order.id}/>

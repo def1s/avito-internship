@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IAdvertisement } from 'shared/types';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { AdvertisementsItem } from '../AdvertisementsItem/AdvertisementsItem';
 import cls from './AdvertisementsList.module.scss';
 
@@ -24,11 +25,24 @@ export const AdvertisementsList = memo((props: AdvertisementsListProps) => {
 			// TODO вставить Loader
 			return 'Загрузка...';
 		} else if (error) {
-			// TODO вставить компонент ошибки или кастомный текст
-			return error;
+			return (
+				<Text
+					title={error}
+					text='Попробуйте перезагрузить страницу'
+					theme={TextTheme.ERROR}
+					align={TextAlign.CENTER}
+					className={cls.error}
+				/>
+			);
 		} else if (advertisements.length === 0) {
-			// TODO вставить кастомный текст
-			return 'У вас еще нет объявлений';
+			return (
+				<Text
+					title='У вас еще нет объявлений!'
+					text='Вы можете добавить их с помощью специальной формы'
+					align={TextAlign.CENTER}
+					className={cls.error}
+				/>
+			);
 		} else {
 			return (
 				advertisements.map((adv) => (

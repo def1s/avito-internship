@@ -76,3 +76,21 @@ export const Default: Story = {
 		advertisements: adv
 	}
 };
+
+export const Loading: Story = {
+	args: {
+		isLoading: true
+	}
+};
+
+export const Error: Story = {
+	args: {
+		error: 'Текст ошибки!'
+	}
+};
+
+export const EmptyList: Story = {
+	args: {
+		advertisements: []
+	}
+};

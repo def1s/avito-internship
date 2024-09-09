@@ -1,6 +1,10 @@
 .EditAdvertisementForm {
 	width: 400px;
-	height: 350px;
+	min-height: 300px;
+
+	.header {
+		margin-bottom: var(--medium-indent);
+	}
 
 	.input {
 		width: 100%;

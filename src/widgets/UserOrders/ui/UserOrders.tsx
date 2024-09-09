@@ -11,6 +11,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { Text } from 'shared/ui/Text/Text';
 import cls from './UserOrders.module.scss';
 
 interface UserOrdersProps {
@@ -43,6 +44,13 @@ export const UserOrders = memo((props: UserOrdersProps) => {
 		>
 
 			<div className={classNames(cls.UserOrders, {}, [className])}>
+				<div className={cls.wrapper}>
+					<Text
+						title='Заказы'
+						text='На этой странице отображаются все твои заказы'
+					/>
+				</div>
+
 				<OrdersList
 					orders={orders || []}
 					isLoading={isLoading}

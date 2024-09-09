@@ -1,7 +1,12 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
+import HeartIcon from 'shared/assets/icons/heart.svg';
 import NotFoundIcon from 'shared/assets/icons/not_found.svg';
+import ViewIcon from 'shared/assets/icons/view.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { formatNumber } from 'shared/lib/formatNumber/formatNumber';
+import { numberLengthValidator } from 'shared/lib/lengthValidators/numberLengthValidator';
+import { textLengthValidator } from 'shared/lib/lengthValidators/textLengthValidator';
 import { IAdvertisement } from 'shared/types';
 import cls from './AdvertisementsItem.module.scss';
 
@@ -36,15 +41,20 @@ export const AdvertisementsItem = memo((props: AdvertisementsItemProps) => {
 
 			</div>
 
-			{/* TODO добавить валидацию на длину для всех полей */}
-			<div className={cls.name}>{advertisement.name}</div>
+			<div className={cls.name}>{textLengthValidator(advertisement.name, 37)}</div>
 
-			{/* TODO добавить разделение для отображения цены */}
-			<div className={cls.price}>{advertisement.price}₽</div>
+			{/* TODO провалидировать длину цены */}
+			<div className={cls.price}>{formatNumber(advertisement.price)} ₽</div>
 
 			<div className={cls.additionalInfo}>
-				<div className={cls.likes}>{advertisement.likes}</div>
-				<div className={cls.views}>{advertisement.views}</div>
+				<div className={cls.likes}>
+					<HeartIcon className={cls.heart}/>
+					{numberLengthValidator(advertisement.likes, 999999)}
+				</div>
+				<div className={cls.views}>
+					<ViewIcon className={cls.view}/>
+					{numberLengthValidator(advertisement.views, 999999)}
+				</div>
 			</div>
 
 		</Link>

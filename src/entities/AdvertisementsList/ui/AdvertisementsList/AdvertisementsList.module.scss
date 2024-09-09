@@ -4,4 +4,8 @@
 	margin: 0 auto;
 	gap: var(--small-indent);
 	width: var(--app-width);
+
+	.error {
+		margin: 0 auto;
+	}
 }

@@ -7,6 +7,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { Text } from 'shared/ui/Text/Text';
 import {
 	getEditAdvertisementFormError
 } from '../../model/selectors/getEditAdvertisementFormError/getEditAdvertisementFormError';
@@ -133,6 +134,11 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 				className={classNames(cls.EditAdvertisementForm, {}, [className])}
 				onSubmit={onSubmit}
 			>
+				<Text
+					title='Редактирование объявления'
+					text='В этой форме вы можете отредактировать объявление'
+					className={cls.header}
+				/>
 
 				{/* TODO вставить Loader и Blur */}
 				{isLoading ? 'Загрузка...' : renderAdvertisementForm()}

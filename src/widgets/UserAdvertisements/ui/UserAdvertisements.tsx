@@ -12,6 +12,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { Text } from 'shared/ui/Text/Text';
 import cls from './UserAdvertisements.module.scss';
 
 interface UserAdvertisementsProps {
@@ -42,9 +43,16 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 			reducers={initialReducers}
 			removeAfterUnmount
 		>
-			<CreateAdvertisement/>
-
 			<div className={classNames(cls.UserAdvertisements, {}, [className])}>
+				<div className={cls.wrapper}>
+					<Text
+						title='Объявления'
+						text='На этой странице отображаются все твои объявления'
+					/>
+
+					<CreateAdvertisement/>
+				</div>
+
 				<AdvertisementsList
 					advertisements={advertisements || []}
 					isLoading={isLoading}
