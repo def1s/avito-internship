@@ -5,6 +5,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { InputArea } from 'shared/ui/InputArea/InputArea';
 import { Text } from 'shared/ui/Text/Text';
 import {
 	getCreateAdvertisementFormError
@@ -92,10 +93,9 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					onChange={onChangePrice}
 				/>
 
-				{/* TODO написать InputArea */}
-				<Input
+				<InputArea
 					label='Описание'
-					className={cls.input}
+					className={cls.inputArea}
 					type='text'
 					value={advertisementForm?.description}
 					onChange={onChangeDescription}

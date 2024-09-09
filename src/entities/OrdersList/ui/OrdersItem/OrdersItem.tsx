@@ -2,6 +2,7 @@ import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import NotFoundIcon from 'shared/assets/icons/not_found.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { formatNumber } from 'shared/lib/formatNumber/formatNumber';
 import { IOrder, IOrderStatus } from 'shared/types';
 import { Button } from 'shared/ui/Button/Button';
 import cls from './OrdersItem.module.scss';
@@ -56,13 +57,14 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 
 			<div className={cls.details}>
 				<div className={cls.item}>
+					{/* TODO проверить правильность перевода и добавить время */}
 					<span>Заказ создан:</span> <span>{new Date(order.createdAt).toLocaleDateString()}</span>
 				</div>
 				<div className={cls.item}>
 					<span>Количество:</span> <span>{order.items.length}</span>
 				</div>
 				<div className={cls.item}>
-					<span>Сумма:</span> <span>${order.total}</span>
+					<span>Сумма:</span> <span>{formatNumber(order.total)} ₽</span>
 				</div>
 			</div>
 
