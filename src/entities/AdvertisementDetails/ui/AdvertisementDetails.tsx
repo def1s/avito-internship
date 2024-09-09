@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IAdvertisement } from 'shared/types';
 import cls from './AdvertisementDetails.module.scss';
@@ -8,6 +8,8 @@ interface AdvertisementDetailsProps {
 	advertisement: IAdvertisement;
 	isLoading: boolean;
 	error?: string
+	// опциональная кнопка для редактирования
+	EditFeature?: ReactNode;
 }
 
 export const AdvertisementDetails = memo((props: AdvertisementDetailsProps) => {
@@ -15,7 +17,8 @@ export const AdvertisementDetails = memo((props: AdvertisementDetailsProps) => {
 		className,
 		advertisement,
 		isLoading,
-		error
+		error,
+		EditFeature
 	} = props;
 
 	const renderAdvertisementDetails = () => {
@@ -48,6 +51,8 @@ export const AdvertisementDetails = memo((props: AdvertisementDetailsProps) => {
 						<p>Просмотры: {advertisement.views}</p>
 						<p>Лайки: {advertisement.likes}</p>
 					</div>
+
+					{EditFeature}
 				</>
 			);
 		}

@@ -6,8 +6,8 @@ import cls from './Modal.module.scss';
 interface ModalProps {
     className?: string;
 	children: ReactNode;
-	onClose?: () => void;
-	isOpen?: boolean;
+	onClose: () => void;
+	isOpen: boolean;
 }
 
 export const Modal = (props: ModalProps) => {

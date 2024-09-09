@@ -1,6 +1,6 @@
 import { IAdvertisementForm } from 'shared/types';
 
-export interface CreateAdvertisementFormSchema {
+export interface EditAdvertisementFormSchema {
 	advertisementForm: IAdvertisementForm;
 	isLoading: boolean;
 	error?: string;

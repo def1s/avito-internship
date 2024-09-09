@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IAdvertisementForm } from 'shared/types';
 import {
-	createAdvertisementForUser
-} from '../services/createAdvertisementForUser/createAdvertisementForUser';
-import { CreateAdvertisementFormSchema } from '../types/createAdvertisementFormSchema';
+	editUserAdvertisement
+} from '../services/editUserAdvertisement/editUserAdvertisement';
+import { EditAdvertisementFormSchema } from '../types/editAdvertisementFormSchema';
 
-const initialState: CreateAdvertisementFormSchema = {
+const initialState: EditAdvertisementFormSchema = {
 	advertisementForm: {
 		name: '',
 		description: '',
@@ -16,8 +16,8 @@ const initialState: CreateAdvertisementFormSchema = {
 	isLoading: false
 };
 
-const createAdvertisementFormSlice = createSlice({
-	name: 'createAdvertisementForm',
+const editAdvertisementFormSlice = createSlice({
+	name: 'editAdvertisementFormSlice',
 	initialState,
 	reducers: {
 		// использую Partial, чтобы указать, что нужны не все поля
@@ -29,19 +29,18 @@ const createAdvertisementFormSlice = createSlice({
 		}
 	},
 	extraReducers: (builder) => {
-		builder.addCase(createAdvertisementForUser.pending, (state) => {
+		builder.addCase(editUserAdvertisement.pending, (state) => {
 			state.isLoading = true;
 			state.error = undefined;
 		});
-		builder.addCase(createAdvertisementForUser.fulfilled, (state) => {
+		builder.addCase(editUserAdvertisement.fulfilled, (state) => {
 			state.isLoading = false;
 		});
-		builder.addCase(createAdvertisementForUser.rejected, (state, action) => {
-			state.isLoading = false;
+		builder.addCase(editUserAdvertisement.rejected, (state, action) => {
 			state.error = action.payload;
 		});
 	}
 });
 
-export const { actions: createAdvertisementFormActions } = createAdvertisementFormSlice;
-export const { reducer: createAdvertisementFormReducer } = createAdvertisementFormSlice;
+export const { actions: editAdvertisementFormActions } = editAdvertisementFormSlice;
+export const { reducer: editAdvertisementFormReducer } = editAdvertisementFormSlice;

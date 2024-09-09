@@ -21,7 +21,12 @@ const advertisementsDetailsSlice = createSlice({
 	name: 'advertisementDetails',
 	initialState,
 	reducers: {
-
+		updateAdvertisement: (state, action: PayloadAction<Partial<IAdvertisement>>) => {
+			state.advertisement = {
+				...state.advertisement,
+				...action.payload
+			};
+		}
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchAdvertisementDetails.pending, (state) => {

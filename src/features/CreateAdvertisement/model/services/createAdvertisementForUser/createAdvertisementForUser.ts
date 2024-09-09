@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { fetchAdvertisements } from 'entities/AdvertisementsList';
+import { IAdvertisementForm } from 'shared/types';
 import {
 	getCreateAdvertisementFormForm
 } from '../../selectors/getCreateAdvertisementFormForm/getCreateAdvertisementFormForm';
-import { IAdvertisementForm } from '../../types/createAdvertisementFormSchema';
 
 export const createAdvertisementForUser =
 	createAsyncThunk<void, void, { rejectValue: string }>
@@ -23,6 +24,9 @@ export const createAdvertisementForUser =
 				}
 
 				// TODO сделать компонент Notification для уведомления пользователя, сейчас ничего не выводится!
+
+				// обновляем текущий список всех объявлений
+				thunkAPI.dispatch(fetchAdvertisements());
 			} catch (error) {
 				return thunkAPI.rejectWithValue('Произошла ошибка');
 			}

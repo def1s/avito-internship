@@ -1,9 +1,7 @@
 import { memo, useCallback, useState } from 'react';
-import {
-	CreateAdvertisementModal
-} from 'features/CreateAdvertisement/ui/CreateAdvertisementModal/CreateAdvertisementModal';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
+import { CreateAdvertisementModal } from '../CreateAdvertisementModal/CreateAdvertisementModal';
 import cls from './CreateAdvertisement.module.scss';
 
 interface CreateAdvertisementProps {
@@ -17,9 +15,9 @@ export const CreateAdvertisement = memo((props: CreateAdvertisementProps) => {
 
 	const [isCreateAdvertisementModal, setIsCreateAdvertisementModal] = useState(false);
 
-	const onOpenCreateAdvertisementModal = () => {
+	const onOpenCreateAdvertisementModal = useCallback(() => {
 		setIsCreateAdvertisementModal(true);
-	};
+	}, []);
 
 	const onCloseCreateAdvertisementModal = useCallback(() => {
 		setIsCreateAdvertisementModal(false);
@@ -31,7 +29,10 @@ export const CreateAdvertisement = memo((props: CreateAdvertisementProps) => {
 
 			{
 				isCreateAdvertisementModal &&
-					<CreateAdvertisementModal isOpen={isCreateAdvertisementModal} onClose={onCloseCreateAdvertisementModal}/>
+					<CreateAdvertisementModal
+						isOpen={isCreateAdvertisementModal}
+						onClose={onCloseCreateAdvertisementModal}
+					/>
 			}
 		</div>
 	);

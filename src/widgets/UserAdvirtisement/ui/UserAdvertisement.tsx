@@ -1,6 +1,7 @@
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { EditAdvertisement } from 'features/EditAdvertisement';
 import {
 	AdvertisementDetails,
 	advertisementsDetailsReducer,
@@ -51,6 +52,8 @@ export const UserAdvertisement = memo((props: UserAdvertisementProps) => {
 					advertisement={advertisement}
 					isLoading={isLoading}
 					error={error}
+					// можно передавать по условию, например, если есть поле editable в данных объявления
+					EditFeature={<EditAdvertisement/>}
 				/>}
 			</div>
 			

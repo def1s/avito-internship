@@ -1,66 +1,83 @@
-import { FormEvent, memo, useCallback } from 'react';
+import { FormEvent, memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getAdvertisementDetailsAdvertisement } from 'entities/AdvertisementDetails';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import {
-	getCreateAdvertisementFormError
-} from '../../model/selectors/getCreateAdvertisementFormError/getCreateAdvertisementFormError';
+	getEditAdvertisementFormError
+} from '../../model/selectors/getEditAdvertisementFormError/getEditAdvertisementFormError';
 import {
-	getCreateAdvertisementFormForm
-} from '../../model/selectors/getCreateAdvertisementFormForm/getCreateAdvertisementFormForm';
+	getEditAdvertisementFormForm
+} from '../../model/selectors/getEditAdvertisementFormForm/getEditAdvertisementFormForm';
 import {
-	getCreateAdvertisementFormIsLoading
-} from '../../model/selectors/getCreateAdvertisementFormIsLoading/getCreateAdvertisementFormIsLoading';
+	getEditAdvertisementFormIsLoading
+} from '../../model/selectors/getEditAdvertisementFormIsLoading/getEditAdvertisementFormIsLoading';
 import {
-	createAdvertisementForUser
-} from '../../model/services/createAdvertisementForUser/createAdvertisementForUser';
+	editUserAdvertisement
+} from '../../model/services/editUserAdvertisement/editUserAdvertisement';
 import {
-	createAdvertisementFormActions,
-	createAdvertisementFormReducer
-} from '../../model/slice/createAdvertisementFormSlice';
-import cls from './CreateAdvertisementForm.module.scss';
+	editAdvertisementFormActions,
+	editAdvertisementFormReducer
+} from '../../model/slice/editAdvertisementFormSlice';
+import cls from './EditAdvertisementForm.module.scss';
 
-interface CreateAdvertisementFormProps {
+interface EditAdvertisementFormProps {
     className?: string;
 }
 
 const initialReducers: ReducersList = {
-	createAdvertisementForm: createAdvertisementFormReducer
+	editAdvertisementForm: editAdvertisementFormReducer
 };
 
-export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps) => {
+export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) => {
 	const {
 		className
 	} = props;
 
+	const { id } = useParams();
 	const dispatch = useAppDispatch();
-	const advertisementForm = useSelector(getCreateAdvertisementFormForm);
-	const isLoading = useSelector(getCreateAdvertisementFormIsLoading);
-	const error = useSelector(getCreateAdvertisementFormError);
+
+	const advertisement = useSelector(getAdvertisementDetailsAdvertisement);
+	const advertisementForm = useSelector(getEditAdvertisementFormForm);
+
+	const isLoading = useSelector(getEditAdvertisementFormIsLoading);
+	const error = useSelector(getEditAdvertisementFormError);
+
+	useEffect(() => {
+		if (advertisement) {
+			dispatch(editAdvertisementFormActions.updateAdvertisementForm(advertisement));
+		}
+	}, [dispatch, advertisement]);
 
 	// обработчики полей
 	const onChangeImageUrl = useCallback((imageUrl: string) => {
-		dispatch(createAdvertisementFormActions.updateAdvertisementForm({ imageUrl }));
+		dispatch(editAdvertisementFormActions.updateAdvertisementForm({ imageUrl }));
 	}, [dispatch]);
 
 	const onChangeName = useCallback((name: string) => {
-		dispatch(createAdvertisementFormActions.updateAdvertisementForm({ name }));
+		dispatch(editAdvertisementFormActions.updateAdvertisementForm({ name }));
 	}, [dispatch]);
 
 	const onChangePrice = useCallback((price: string) => {
-		dispatch(createAdvertisementFormActions.updateAdvertisementForm({ price: Number(price) }));
+		dispatch(editAdvertisementFormActions.updateAdvertisementForm({ price: Number(price) }));
 	}, [dispatch]);
 
 	const onChangeDescription = useCallback((description: string) => {
-		dispatch(createAdvertisementFormActions.updateAdvertisementForm({ description }));
+		dispatch(editAdvertisementFormActions.updateAdvertisementForm({ description }));
 	}, [dispatch]);
 
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		dispatch(createAdvertisementForUser());
+
+		// если id нет, то что-то здесь явно не так, можно выводить сообщение, но пока я не могу представить сценарий,
+		// чтобы не было id вовсе
+		if (id) {
+			dispatch(editUserAdvertisement(id));
+		}
 	};
 
 	const renderAdvertisementForm = () => {
@@ -100,7 +117,7 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					onChange={onChangeDescription}
 				/>
 
-				<Button className={cls.submitBtn}>Создать объявление</Button>
+				<Button className={cls.submitBtn}>Сохранить изменения</Button>
 			</>
 		);
 	};
@@ -110,11 +127,13 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 			reducers={initialReducers}
 			removeAfterUnmount
 		>
+
 			{/* TODO написать валидацию для всех полей */}
 			<form
-				className={classNames(cls.CreateAdvertisementForm, {}, [className])}
+				className={classNames(cls.EditAdvertisementForm, {}, [className])}
 				onSubmit={onSubmit}
 			>
+
 				{/* TODO вставить Loader и Blur */}
 				{isLoading ? 'Загрузка...' : renderAdvertisementForm()}
 

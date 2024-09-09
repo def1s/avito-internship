@@ -17,3 +17,4 @@ export interface IAdvertisement {
 	imageUrl?: string;
 }
 
+export type IAdvertisementForm = Omit<IAdvertisement, 'id' | 'views' | 'likes' | 'createdAt'>

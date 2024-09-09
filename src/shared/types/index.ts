@@ -1,2 +1,2 @@
-export { IAdvertisement } from './advertisementTypes';
+export { IAdvertisement, IAdvertisementForm } from './advertisementTypes';
 export { IOrder, IOrderStatus, IOrderItem } from './ordersTypes';
