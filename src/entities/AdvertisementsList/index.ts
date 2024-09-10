@@ -4,7 +4,7 @@ export { AdvertisementsListSchema } from './model/types/advertisementsListSchema
 
 export { AdvertisementsList } from './ui/AdvertisementsList/AdvertisementsList';
 
-export { fetchAdvertisements } from './model/services/fetchAdvertisements/fetchAdvertisements';
+export { paginateAdvertisements } from './model/services/paginateAdvertisements/paginateAdvertisements';
 
 export {
 	getAdvertisementsListAdvertisements
@@ -17,3 +17,11 @@ export {
 export {
 	getAdvertisementsListError
 } from './model/selectors/getAdvertisementsListError/getAdvertisementsListError';
+
+export {
+	getAdvertisementsListIsEnd
+} from './model/selectors/getAdvertisementsListIsEnd/getAdvertisementsListIsEnd';
+
+export {
+	getAdvertisementsListOffset
+} from './model/selectors/getAdvertisementsListOffset/getAdvertisementsListOffset';

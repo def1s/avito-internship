@@ -4,10 +4,13 @@ import { CreateAdvertisement } from 'features/CreateAdvertisement';
 import {
 	AdvertisementsList,
 	advertisementsListReducer,
-	fetchAdvertisements,
+	paginateAdvertisements,
 	getAdvertisementsListAdvertisements,
 	getAdvertisementsListError,
 	getAdvertisementsListIsLoading
+} from 'entities/AdvertisementsList';
+import {
+	getAdvertisementsListOffset
 } from 'entities/AdvertisementsList';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -29,10 +32,14 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 	} = props;
 
 	const dispatch = useAppDispatch();
+	const offset = useSelector(getAdvertisementsListOffset);
 
 	useEffect(() => {
-		dispatch(fetchAdvertisements());
-	}, [dispatch]);
+		// первый запрос данных, если список пуст. в остальном список очищать не будем.
+		if (offset === 0) {
+			dispatch(paginateAdvertisements());
+		}
+	}, [offset, dispatch]);
 
 	const advertisements = useSelector(getAdvertisementsListAdvertisements);
 	const isLoading = useSelector(getAdvertisementsListIsLoading);
@@ -41,8 +48,10 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 	return (
 		<DynamicModuleLoader
 			reducers={initialReducers}
-			removeAfterUnmount
+			// removeAfterUnmount
 		>
+			{/* TODO подумать, удалять стейт или нет */}
+
 			<div className={classNames(cls.UserAdvertisements, {}, [className])}>
 				<div className={cls.wrapper}>
 					<Text

@@ -79,13 +79,15 @@ export const Default: Story = {
 
 export const Loading: Story = {
 	args: {
-		isLoading: true
+		isLoading: true,
+		advertisements: adv
 	}
 };
 
 export const Error: Story = {
 	args: {
-		error: 'Текст ошибки!'
+		error: 'Текст ошибки!',
+		advertisements: []
 	}
 };
 

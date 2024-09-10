@@ -1,29 +1,48 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { LIMIT_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { IAdvertisement } from 'shared/types';
-import { fetchAdvertisements } from '../services/fetchAdvertisements/fetchAdvertisements';
+import { paginateAdvertisements } from '../services/paginateAdvertisements/paginateAdvertisements';
 import { AdvertisementsListSchema } from '../types/advertisementsListSchema';
+
+const limit = Number(localStorage.getItem(LIMIT_LOCALSTORAGE_KEY));
 
 const initialState: AdvertisementsListSchema = {
 	advertisements: [],
-	isLoading: false
+	isLoading: false,
+	start: 0,
+	limit: limit || 10,
+	offset: 0,
+	isEnd: false
 };
 
 const advertisementsListSlice = createSlice({
 	name: 'advertisementsList',
 	initialState,
 	reducers: {
-
+		addAdvertisement: (state, action: PayloadAction<IAdvertisement>) => {
+			state.advertisements.push(action.payload);
+		},
+		setLimit: (state, action: PayloadAction<number>) => {
+			state.limit = action.payload;
+			localStorage.setItem(LIMIT_LOCALSTORAGE_KEY, String(action.payload));
+		}
 	},
 	extraReducers: (builder) => {
-		builder.addCase(fetchAdvertisements.pending, (state) => {
+		builder.addCase(paginateAdvertisements.pending, (state) => {
 			state.error = undefined;
 			state.isLoading = true;
 		});
-		builder.addCase(fetchAdvertisements.fulfilled, (state, action: PayloadAction<IAdvertisement[]>) => {
+		builder.addCase(paginateAdvertisements.fulfilled, (state, action: PayloadAction<IAdvertisement[]>) => {
 			state.isLoading = false;
-			state.advertisements = action.payload;
+
+			if (action.payload.length === 0 || action.payload.length !== state.limit) {
+				state.isEnd = true;
+			}
+
+			state.advertisements = [...state.advertisements, ...action.payload];
+			state.offset += state.limit;
 		});
-		builder.addCase(fetchAdvertisements.rejected, (state, action) => {
+		builder.addCase(paginateAdvertisements.rejected, (state, action) => {
 			state.isLoading = false;
 			state.error = action.payload;
 		});
