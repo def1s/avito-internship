@@ -1,4 +1,5 @@
 import { configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import { notificationsListReducer } from 'entities/NotificationsList';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
 
@@ -8,7 +9,8 @@ export const configureReduxStore = (
 ) => {
 	// на вход идут основные редьюсеры и асинхронные
 	const rootReducers: ReducersMapObject<StateSchema> = {
-		...asyncReducers
+		...asyncReducers,
+		notificationsList: notificationsListReducer
 	};
 
 	// создаю менеджер

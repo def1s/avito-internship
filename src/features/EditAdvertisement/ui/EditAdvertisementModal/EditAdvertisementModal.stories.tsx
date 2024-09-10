@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { EditAdvertisementModal } from './EditAdvertisementModal';
 
 const meta: Meta<typeof EditAdvertisementModal> = {
@@ -14,4 +15,22 @@ export const Default: Story = {
 	args: {
 		isOpen: true
 	}
+};
+
+export const Loading: Story = {
+	args: {
+		isOpen: true
+	},
+	decorators: [
+		StoreDecorator(
+			{
+				editAdvertisementForm: {
+					isLoading: true,
+					advertisementForm: {
+						name: '34343434'
+					}
+				}
+			}
+		)
+	]
 };

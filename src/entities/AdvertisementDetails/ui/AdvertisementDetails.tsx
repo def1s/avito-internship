@@ -2,6 +2,7 @@ import { memo, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { formatNumber } from 'shared/lib/formatNumber/formatNumber';
 import { IAdvertisement } from 'shared/types';
+import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import cls from './AdvertisementDetails.module.scss';
 
@@ -25,8 +26,7 @@ export const AdvertisementDetails = memo((props: AdvertisementDetailsProps) => {
 
 	const renderAdvertisementDetails = () => {
 		if (isLoading) {
-			// TODO вставить Loader
-			return 'Загрузка...';
+			return <Loader className={cls.loader}/>;
 		} else if (error) {
 			return (
 				<Text

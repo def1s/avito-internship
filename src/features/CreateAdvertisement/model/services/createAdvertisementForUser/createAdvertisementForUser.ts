@@ -28,7 +28,7 @@ export const createAdvertisementForUser =
 					throw new Error('Что-то пошло не так');
 				}
 
-				// TODO сделать компонент Notification для уведомления пользователя, сейчас ничего не выводится!
+				// TODO сделать компонент NotificationsList для уведомления пользователя, сейчас ничего не выводится!
 
 				// @ts-expect-error отсутствует типизация для thunk
 				const isEnd = getAdvertisementsListIsEnd(thunkAPI.getState());

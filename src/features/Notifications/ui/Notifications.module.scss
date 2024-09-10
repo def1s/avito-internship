@@ -1,0 +1,6 @@
+.Notifications {
+	position: fixed;
+	bottom: var(--medium-indent);
+	right: var(--medium-indent);
+	z-index: var(--notification-z-index);
+}

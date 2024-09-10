@@ -53,7 +53,7 @@ export const UserAdvertisement = memo((props: UserAdvertisementProps) => {
 					isLoading={isLoading}
 					error={error}
 					// можно передавать по условию, например, если есть поле editable в данных объявления
-					// также можно передавать не компонент, а ссылку на него, если понадобиться прокидывать пропсы
+					// также можно передавать не компонент, а ссылку на него, если понадобится прокидывать пропсы
 					EditFeature={<EditAdvertisement/>}
 				/>}
 			</div>

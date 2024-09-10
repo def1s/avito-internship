@@ -3,9 +3,12 @@ import { CreateAdvertisementFormSchema } from 'features/CreateAdvertisement';
 import { EditAdvertisementFormSchema } from 'features/EditAdvertisement';
 import { AdvertisementDetailsSchema } from 'entities/AdvertisementDetails';
 import { AdvertisementsListSchema } from 'entities/AdvertisementsList';
+import { NotificationsListSchema } from 'entities/NotificationsList';
 import { OrdersListSchema } from 'entities/OrdersList';
 
 export interface StateSchema {
+	notificationsList: NotificationsListSchema;
+
 	advertisementsList?: AdvertisementsListSchema;
 	ordersList?: OrdersListSchema;
 	advertisementDetails?: AdvertisementDetailsSchema;

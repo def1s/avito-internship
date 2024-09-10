@@ -24,7 +24,7 @@ export const completeUserOrder =
 				}
 
 				thunkAPI.dispatch(ordersListActions.updateOrder(response.data));
-				// TODO сделать компонент Notification для уведомления пользователя, сейчас ничего не выводится!
+				// TODO сделать компонент NotificationsList для уведомления пользователя, сейчас ничего не выводится!
 			} catch (error) {
 				return thunkAPI.rejectWithValue('Произошла ошибка');
 			} finally {
