@@ -35,7 +35,7 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 	const offset = useSelector(getAdvertisementsListOffset);
 
 	useEffect(() => {
-		// первый запрос данных, если список пуст. в остальном список очищать не будем.
+		// первый запрос данных, если список пуст, в остальном список инициализировать не будем.
 		if (offset === 0) {
 			dispatch(paginateAdvertisements());
 		}
@@ -48,10 +48,8 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 	return (
 		<DynamicModuleLoader
 			reducers={initialReducers}
-			// removeAfterUnmount
+			// решил, что не буду сбрасывать состояние, однажды загрузив все объявления
 		>
-			{/* TODO подумать, удалять стейт или нет */}
-
 			<div className={classNames(cls.UserAdvertisements, {}, [className])}>
 				<div className={cls.wrapper}>
 					<Text
@@ -63,7 +61,7 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 				</div>
 
 				<AdvertisementsList
-					advertisements={advertisements || []}
+					advertisements={advertisements}
 					isLoading={isLoading}
 					error={error}
 				/>

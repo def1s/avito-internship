@@ -1,5 +1,6 @@
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { CompleteOrder } from 'features/CompleteOrder';
 import {
 	fetchOrders,
 	getOrdersListError,
@@ -52,9 +53,10 @@ export const UserOrders = memo((props: UserOrdersProps) => {
 				</div>
 
 				<OrdersList
-					orders={orders || []}
+					orders={orders}
 					isLoading={isLoading}
 					error={error}
+					CompleteOrderFeature={CompleteOrder}
 				/>
 			</div>
 

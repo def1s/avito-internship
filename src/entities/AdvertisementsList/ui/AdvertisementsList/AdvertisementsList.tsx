@@ -14,18 +14,18 @@ import { LimitSelector } from '../LimitSelector/LimitSelector';
 import cls from './AdvertisementsList.module.scss';
 
 interface AdvertisementsListProps {
-    className?: string;
-	advertisements: IAdvertisement[];
-	isLoading: boolean;
-	error?: string
+	className?: string;
+	advertisements?: IAdvertisement[];
+	isLoading?: boolean;
+	error?: string;
 }
 
 export const AdvertisementsList = memo((props: AdvertisementsListProps) => {
 	const {
 		className,
-		advertisements,
+		advertisements = [], // пустой по-умолчанию массив для безопасности
 		isLoading,
-		error
+		error,
 	} = props;
 
 	// TODO если останется время, вынести логику пагинации в пропсы
@@ -41,8 +41,8 @@ export const AdvertisementsList = memo((props: AdvertisementsListProps) => {
 		dispatch(paginateAdvertisements());
 	}, [dispatch]);
 
-	const renderAdvertisementsList = () => {
-		if (!advertisements || advertisements.length === 0 && !isLoading && !error) {
+	const renderAdvertisementsList = useCallback(() => {
+		if (!advertisements.length && !isLoading && !error) {
 			return (
 				<Text
 					title='У вас еще нет объявлений!'
@@ -51,55 +51,47 @@ export const AdvertisementsList = memo((props: AdvertisementsListProps) => {
 					className={cls.error}
 				/>
 			);
-		} else {
-			return (
-				<>
-					{
-						advertisements.map((adv) => (
-							<AdvertisementsItem advertisement={adv} key={adv.id}/>
-						))
-					}
-				</>
-			);
 		}
-	};
+
+		return advertisements.map((adv) => (
+			<AdvertisementsItem advertisement={adv} key={adv.id} />
+		));
+	}, [advertisements, isLoading, error]);
 
 	return (
 		<div className={classNames(cls.AdvertisementsList, {}, [className])}>
-			{isLoading &&
+			{isLoading && (
 				<>
-					<Loader className={cls.loader}/>
-					<Blur className={cls.blur}/>
+					<Loader className={cls.loader} />
+					<Blur className={cls.blur} />
 				</>
-			}
+			)}
 
-			{
-				error &&
-					<Text
-						title={error}
-						text='Попробуйте перезагрузить страницу'
-						theme={TextTheme.ERROR}
-						align={TextAlign.CENTER}
-						className={cls.error}
-					/>
-			}
+			{error && (
+				<Text
+					title={error}
+					text='Попробуйте перезагрузить страницу'
+					theme={TextTheme.ERROR}
+					align={TextAlign.CENTER}
+					className={cls.error}
+				/>
+			)}
 
-			<LimitSelector/>
-			
+			{advertisements.length > 0 && <LimitSelector />}
+
 			<div className={cls.advertisementsWrapper}>
 				{renderAdvertisementsList()}
 			</div>
 
-			{
-				advertisements.length > 0 &&
-					<Button
-						onClick={onPagination}
-						disabled={isEnd}
-						className={cls.paginationBtn}
-					>
-						Загрузить еще
-					</Button>
-			}
+			{advertisements.length > 0 && !isLoading && !isEnd && (
+				<Button
+					onClick={onPagination}
+					disabled={isEnd}
+					className={cls.paginationBtn}
+				>
+					Загрузить еще
+				</Button>
+			)}
 		</div>
 	);
 });

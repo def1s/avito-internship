@@ -12,7 +12,15 @@ const ordersListSlice = createSlice({
 	name: 'ordersList',
 	initialState,
 	reducers: {
-
+		setIsLoading: (state, action: PayloadAction<boolean>) => {
+			state.isLoading = action.payload;
+		},
+		updateOrder: (state, action: PayloadAction<IOrder>) => {
+			const index = state.orders.findIndex(order => order.id === action.payload.id);
+			if (index !== -1) {
+				state.orders[index] = action.payload; // обновляем заказ с новым значением
+			}
+		}
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchOrders.pending, (state) => {

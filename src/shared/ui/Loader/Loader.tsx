@@ -12,7 +12,7 @@ export const Loader = memo((props: LoaderProps) => {
 	} = props;
 
 	const additionalClasses = [
-		className,
+		className
 	];
 
 	return (
