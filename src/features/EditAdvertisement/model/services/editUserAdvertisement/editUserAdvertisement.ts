@@ -2,13 +2,13 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { advertisementsDetailsActions } from 'entities/AdvertisementDetails';
 import { notificationsListActions } from 'entities/NotificationsList';
-import { IAdvertisement } from 'shared/types';
+import { IAdvertisement, NotificationTypes } from 'shared/types';
 import {
 	getEditAdvertisementFormForm
 } from '../../selectors/getEditAdvertisementFormForm/getEditAdvertisementFormForm';
 
 export const editUserAdvertisement =
-	createAsyncThunk<void, string, { rejectValue: string }>
+	createAsyncThunk<void, string>
 	(
 		'editAdvertisement/editUserAdvertisement',
 		async (id, thunkAPI) => {
@@ -25,13 +25,20 @@ export const editUserAdvertisement =
 					throw new Error('Что-то пошло не так');
 				}
 
-				// TODO сделать компонент NotificationsList для уведомления пользователя, сейчас ничего не выводится!
-				thunkAPI.dispatch(notificationsListActions.addNotification({ message: 'Ок!' }));
+				thunkAPI.dispatch(
+					notificationsListActions.addNotification({ message: 'Объявление успешно отредактировано!' })
+				);
 
 				// обновляем текущее обновление в соответствии с ответом
 				thunkAPI.dispatch(advertisementsDetailsActions.updateAdvertisement(response.data));
 			} catch (error) {
-				return thunkAPI.rejectWithValue('Произошла ошибка');
+				// можно выводить сообщение с сервера
+				thunkAPI.dispatch(
+					notificationsListActions.addNotification({
+						message: 'Произошла ошибка!',
+						theme: NotificationTypes.ERROR
+					})
+				);
 			}
 		}
 	);

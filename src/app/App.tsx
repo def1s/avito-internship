@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/index.scss';
 import { Navbar } from 'widgets/Navbar';
-import { Notifications } from 'features/Notifications';
+import { NotificationsList } from 'entities/NotificationsList';
 import { AppRouter } from './providers/router';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
 
 			<AppRouter/>
 
-			<Notifications/>
+			<NotificationsList/>
 		</div>
 	);
 };

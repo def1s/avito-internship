@@ -22,8 +22,7 @@ export const configureReduxStore = (
 		preloadedState: initialState
 	});
 
-	// eslint-disable-next-line
-	// @ts-expect-error
+	// @ts-expect-error добавляем поле
 	store.reducerManager = reducerManager;
 
 	return store;

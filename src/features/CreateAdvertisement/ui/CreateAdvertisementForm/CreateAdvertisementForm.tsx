@@ -2,14 +2,11 @@ import { FormEvent, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { InputArea } from 'shared/ui/InputArea/InputArea';
 import { Text } from 'shared/ui/Text/Text';
-import {
-	getCreateAdvertisementFormError
-} from '../../model/selectors/getCreateAdvertisementFormError/getCreateAdvertisementFormError';
 import {
 	getCreateAdvertisementFormForm
 } from '../../model/selectors/getCreateAdvertisementFormForm/getCreateAdvertisementFormForm';
@@ -41,7 +38,6 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 	const dispatch = useAppDispatch();
 	const advertisementForm = useSelector(getCreateAdvertisementFormForm);
 	const isLoading = useSelector(getCreateAdvertisementFormIsLoading);
-	const error = useSelector(getCreateAdvertisementFormError);
 
 	// обработчики полей
 	const onChangeImageUrl = useCallback((imageUrl: string) => {

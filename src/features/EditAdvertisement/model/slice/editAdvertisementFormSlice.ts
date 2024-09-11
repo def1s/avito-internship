@@ -31,13 +31,12 @@ const editAdvertisementFormSlice = createSlice({
 	extraReducers: (builder) => {
 		builder.addCase(editUserAdvertisement.pending, (state) => {
 			state.isLoading = true;
-			state.error = undefined;
 		});
 		builder.addCase(editUserAdvertisement.fulfilled, (state) => {
 			state.isLoading = false;
 		});
 		builder.addCase(editUserAdvertisement.rejected, (state, action) => {
-			state.error = action.payload;
+			state.isLoading = false;
 		});
 	}
 });

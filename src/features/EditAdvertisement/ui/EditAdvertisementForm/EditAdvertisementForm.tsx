@@ -4,14 +4,11 @@ import { useParams } from 'react-router-dom';
 import { getAdvertisementDetailsAdvertisement } from 'entities/AdvertisementDetails';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { InputArea } from 'shared/ui/InputArea/InputArea';
 import { Text } from 'shared/ui/Text/Text';
-import {
-	getEditAdvertisementFormError
-} from '../../model/selectors/getEditAdvertisementFormError/getEditAdvertisementFormError';
 import {
 	getEditAdvertisementFormForm
 } from '../../model/selectors/getEditAdvertisementFormForm/getEditAdvertisementFormForm';
@@ -47,7 +44,6 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 	const advertisementForm = useSelector(getEditAdvertisementFormForm);
 
 	const isLoading = useSelector(getEditAdvertisementFormIsLoading);
-	const error = useSelector(getEditAdvertisementFormError);
 
 	useEffect(() => {
 		if (advertisement) {

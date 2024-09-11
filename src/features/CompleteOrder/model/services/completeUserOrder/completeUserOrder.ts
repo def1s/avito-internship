@@ -1,10 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { notificationsListActions } from 'entities/NotificationsList';
 import { ordersListActions } from 'entities/OrdersList';
-import { IOrder, IOrderStatus } from 'shared/types';
+import { IOrder, IOrderStatus, NotificationTypes } from 'shared/types';
 
 export const completeUserOrder =
-	createAsyncThunk<void, number, { rejectValue: string }>
+	createAsyncThunk<void, number>
 	(
 		'completeOrder/completeUserOrder',
 		async (id, thunkAPI) => {
@@ -24,9 +25,15 @@ export const completeUserOrder =
 				}
 
 				thunkAPI.dispatch(ordersListActions.updateOrder(response.data));
-				// TODO сделать компонент NotificationsList для уведомления пользователя, сейчас ничего не выводится!
+				thunkAPI.dispatch(notificationsListActions.addNotification({ message: 'Заказ завершен!' }));
 			} catch (error) {
-				return thunkAPI.rejectWithValue('Произошла ошибка');
+				// можно выводить ошибку, которую возвращает сервер
+				thunkAPI.dispatch(
+					notificationsListActions.addNotification({
+						message: 'Произошла ошибка',
+						theme: NotificationTypes.ERROR
+					})
+				);
 			} finally {
 				thunkAPI.dispatch(ordersListActions.setIsLoading(false));
 			}

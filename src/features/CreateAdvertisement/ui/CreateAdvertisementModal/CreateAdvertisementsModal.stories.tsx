@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { createAdvertisementFormReducer } from 'features/CreateAdvertisement/model/slice/createAdvertisementFormSlice';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { createAdvertisementFormReducer } from '../../model/slice/createAdvertisementFormSlice';
 import { CreateAdvertisementModal } from './CreateAdvertisementModal';
 
 const meta: Meta<typeof CreateAdvertisementModal> = {
 	title: 'features/CreateAdvertisementModal',
-	component: CreateAdvertisementModal,
+	component: CreateAdvertisementModal
 };
 
 export default meta;
@@ -30,9 +30,6 @@ export const Loading: Story = {
 						name: '34343434'
 					}
 				},
-			},
-			{
-				createAdvertisementForm: createAdvertisementFormReducer
 			}
 		)
 	]

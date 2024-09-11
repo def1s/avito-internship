@@ -1,16 +1,20 @@
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { getNotificationsListNotifications, notificationsListActions } from 'entities/NotificationsList';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ToastNotification } from 'shared/ui/ToastNotification/ToastNotification';
-import cls from './Notifications.module.scss';
+import {
+	getNotificationsListNotifications
+} from '../model/selectors/getNotificationsListNotifications/getNotificationsListNotifications';
+import { notificationsListActions } from '../model/slice/notificationsListSlice';
+import cls from './NotificationsList.module.scss';
 
 interface NotificationsProps {
 	className?: string;
 }
 
-export const Notifications = memo((props: NotificationsProps) => {
+// скорее оставил бы в entities в качестве ui
+export const NotificationsList = memo((props: NotificationsProps) => {
 	const { className } = props;
 
 	const dispatch = useAppDispatch();
@@ -28,7 +32,7 @@ export const Notifications = memo((props: NotificationsProps) => {
 	}, [dispatch, notifications]);
 
 	return (
-		<div className={classNames(cls.Notifications, {}, [className])}>
+		<div className={classNames(cls.NotificationsList, {}, [className])}>
 			{notifications.map(({ id, message, theme }) => (
 				<ToastNotification message={message} theme={theme} key={id} id={id}/>
 			))}
