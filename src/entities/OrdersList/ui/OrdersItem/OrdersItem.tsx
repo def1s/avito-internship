@@ -67,7 +67,7 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 				<span>Заказ создан:</span> <span>{formatDate(new Date(order.createdAt))}</span>
 			</div>
 			<div className={cls.item}>
-				<span>Количество:</span> <span>{order.items.length}</span>
+				<span>Количество товаров:</span> <span>{order.items.length}</span>
 			</div>
 			<div className={cls.item}>
 				<span>Сумма:</span> <span>{formatNumber(order.total)} ₽</span>

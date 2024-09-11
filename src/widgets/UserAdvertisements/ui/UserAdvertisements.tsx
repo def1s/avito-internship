@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { CreateAdvertisement } from 'features/CreateAdvertisement';
 import {
@@ -7,10 +7,13 @@ import {
 	paginateAdvertisements,
 	getAdvertisementsListAdvertisements,
 	getAdvertisementsListError,
-	getAdvertisementsListIsLoading
+	getAdvertisementsListIsLoading, getAdvertisementsListIsEnd
 } from 'entities/AdvertisementsList';
 import {
 	getAdvertisementsListOffset
+} from 'entities/AdvertisementsList';
+import {
+	getAdvertisementsListSearchStr
 } from 'entities/AdvertisementsList';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -39,11 +42,18 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 		if (offset === 0) {
 			dispatch(paginateAdvertisements());
 		}
-	}, [offset, dispatch]);
+		// eslint-disable-next-line
+	}, [dispatch]);
 
 	const advertisements = useSelector(getAdvertisementsListAdvertisements);
 	const isLoading = useSelector(getAdvertisementsListIsLoading);
 	const error = useSelector(getAdvertisementsListError);
+	const isEnd = useSelector(getAdvertisementsListIsEnd);
+	const searchStr = useSelector(getAdvertisementsListSearchStr);
+
+	const onPagination = useCallback(() => {
+		dispatch(paginateAdvertisements());
+	}, [dispatch]);
 
 	return (
 		<DynamicModuleLoader
@@ -64,6 +74,9 @@ export const UserAdvertisements = memo((props: UserAdvertisementsProps) => {
 					advertisements={advertisements}
 					isLoading={isLoading}
 					error={error}
+					isEnd={isEnd}
+					searchStr={searchStr}
+					onPagination={onPagination}
 				/>
 			</div>
 

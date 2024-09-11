@@ -8,4 +8,5 @@ export interface AdvertisementsListSchema {
 	limit: number;
 	offset: number;
 	isEnd: boolean;
+	searchStr: string;
 }

@@ -1,5 +1,6 @@
 .AdvertisementsList {
 	width: var(--app-width);
+	min-height: 300px;
 	padding-bottom: var(--medium-indent);
 	margin: 0 auto;
 	position: relative;
@@ -12,7 +13,19 @@
 		gap: var(--small-indent);
 	}
 
-	.error {
+	.additionalWrapper {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: end;
+		margin-bottom: var(--medium-indent);
+
+		.inputSearch {
+			width: 300px;
+		}
+	}
+
+	.message {
 		margin: 0 auto;
 	}
 

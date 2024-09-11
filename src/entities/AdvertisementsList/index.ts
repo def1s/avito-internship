@@ -25,3 +25,7 @@ export {
 export {
 	getAdvertisementsListOffset
 } from './model/selectors/getAdvertisementsListOffset/getAdvertisementsListOffset';
+
+export {
+	getAdvertisementsListSearchStr
+} from './model/selectors/getAdvertisementsListSearchStr/getAdvertisementsListSearchStr';

@@ -35,7 +35,7 @@ const createAdvertisementFormSlice = createSlice({
 		builder.addCase(createAdvertisementForUser.fulfilled, (state) => {
 			state.isLoading = false;
 		});
-		builder.addCase(createAdvertisementForUser.rejected, (state, action) => {
+		builder.addCase(createAdvertisementForUser.rejected, (state) => {
 			state.isLoading = false;
 		});
 	}

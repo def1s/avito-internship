@@ -35,7 +35,7 @@ const editAdvertisementFormSlice = createSlice({
 		builder.addCase(editUserAdvertisement.fulfilled, (state) => {
 			state.isLoading = false;
 		});
-		builder.addCase(editUserAdvertisement.rejected, (state, action) => {
+		builder.addCase(editUserAdvertisement.rejected, (state) => {
 			state.isLoading = false;
 		});
 	}

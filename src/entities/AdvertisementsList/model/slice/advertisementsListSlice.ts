@@ -12,7 +12,8 @@ const initialState: AdvertisementsListSchema = {
 	start: 0,
 	limit: limit || 10,
 	offset: 0,
-	isEnd: false
+	isEnd: false,
+	searchStr: ''
 };
 
 const advertisementsListSlice = createSlice({
@@ -25,6 +26,16 @@ const advertisementsListSlice = createSlice({
 		setLimit: (state, action: PayloadAction<number>) => {
 			state.limit = action.payload;
 			localStorage.setItem(LIMIT_LOCALSTORAGE_KEY, String(action.payload));
+		},
+		setSearchStr: (state, action: PayloadAction<string>) => {
+			state.isLoading = true;
+			state.searchStr = action.payload;
+		},
+		resetAdvertisements: (state) => {
+			state.offset = 0;
+			state.start = 0;
+			state.isEnd = false;
+			state.advertisements = [];
 		}
 	},
 	extraReducers: (builder) => {

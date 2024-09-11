@@ -7,5 +7,6 @@ export { OrdersList } from './ui/OrdersList/OrdersList';
 export { getOrdersListOrders } from './model/selectors/getOrdersListOrders/getOrdersListOrders';
 export { getOrdersListError } from './model/selectors/getOrdersListError/getOrdersListError';
 export { getOrdersListIsLoading } from './model/selectors/getOrdersListIsLoading/getOrdersListIsLoading';
+export { getOrdersListFilter } from './model/selectors/getOrdersListFilter/getOrdersListFilter';
 
 export { fetchOrders } from './model/services/fetchOrders/fetchOrders';

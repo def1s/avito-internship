@@ -4,6 +4,7 @@ import { CompleteOrder } from 'features/CompleteOrder';
 import {
 	fetchOrders,
 	getOrdersListError,
+	getOrdersListFilter,
 	getOrdersListIsLoading,
 	getOrdersListOrders,
 	OrdersList,
@@ -29,10 +30,11 @@ export const UserOrders = memo((props: UserOrdersProps) => {
 	} = props;
 
 	const dispatch = useAppDispatch();
+	const filter = useSelector(getOrdersListFilter);
 
 	useEffect(() => {
 		dispatch(fetchOrders());
-	}, [dispatch]);
+	}, [dispatch, filter]);
 
 	const orders = useSelector(getOrdersListOrders);
 	const isLoading = useSelector(getOrdersListIsLoading);
@@ -57,6 +59,7 @@ export const UserOrders = memo((props: UserOrdersProps) => {
 					isLoading={isLoading}
 					error={error}
 					CompleteOrderFeature={CompleteOrder}
+					filter={filter}
 				/>
 			</div>
 

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IOrder } from 'shared/types';
+import { IOrder, IOrderStatus } from 'shared/types';
 import { fetchOrders } from '../services/fetchOrders/fetchOrders';
 import { OrdersListSchema } from '../types/ordersListSchema';
 
@@ -20,6 +20,12 @@ const ordersListSlice = createSlice({
 			if (index !== -1) {
 				state.orders[index] = action.payload; // обновляем заказ с новым значением
 			}
+		},
+		updateFilter: (state, action: PayloadAction<IOrderStatus>) => {
+			state.filter = action.payload;
+		},
+		removeFilter: (state) => {
+			state.filter = undefined;
 		}
 	},
 	extraReducers: (builder) => {

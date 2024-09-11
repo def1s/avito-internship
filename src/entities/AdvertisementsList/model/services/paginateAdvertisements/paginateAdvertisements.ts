@@ -8,6 +8,9 @@ import {
 	getAdvertisementsListOffset
 } from '../../selectors/getAdvertisementsListOffset/getAdvertisementsListOffset';
 import {
+	getAdvertisementsListSearchStr
+} from '../../selectors/getAdvertisementsListSearchStr/getAdvertisementsListSearchStr';
+import {
 	getAdvertisementsListStart
 } from '../../selectors/getAdvertisementsListStart/getAdvertisementsListStart';
 
@@ -24,6 +27,8 @@ export const paginateAdvertisements =
 				const start = getAdvertisementsListStart(thunkAPI.getState());
 				// @ts-expect-error нет типизации для thunk
 				const offset = getAdvertisementsListOffset(thunkAPI.getState());
+				// @ts-expect-error нет типизации для thunk
+				const searchStr = getAdvertisementsListSearchStr(thunkAPI.getState());
 
 				const response =
 					await axios.get<IAdvertisement[]>(
@@ -31,7 +36,8 @@ export const paginateAdvertisements =
 						{
 							params: {
 								_start: start + offset,
-								_limit: limit
+								_limit: limit,
+								name: searchStr
 							}
 						}
 					);
