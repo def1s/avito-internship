@@ -1,18 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import { IOrder } from 'shared/types';
 import { getOrdersListFilter } from '../../selectors/getOrdersListFilter/getOrdersListFilter';
 import { getOrdersListSort } from '../../selectors/getOrdersListSort/getOrdersListSort';
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
 
 export const fetchOrders =
-	createAsyncThunk<IOrder[], void, { rejectValue: string }>
+	createAsyncThunk<IOrder[], void, ThunkConfig<string>>
 	(
 		'ordersList/fetchOrders',
 		async (_, thunkAPI) => {
 			try {
-				// @ts-expect-error нет типизации для thunk
 				const filter = getOrdersListFilter(thunkAPI.getState());
-				// @ts-expect-error нет типизации для thunk
 				const sort = getOrdersListSort(thunkAPI.getState());
 
 				const response =

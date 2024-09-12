@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npx webpack serve",
-    "build:prod": "npx webpack build --env mode=production",
-    "build:dev": "npx webpack build --env mode=development",
+    "start:dev": "concurrently \"npx webpack serve\" \"npm run start:dev:server\"",
+    "start:dev:server": "json-server --watch ./json-server/db.json --port 8080",
+    "build": "npx webpack build",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
@@ -50,6 +51,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-storybook": "^0.8.0",
     "html-webpack-plugin": "^5.6.0",
+    "json-server": "^1.0.0-beta.1",
     "mini-css-extract-plugin": "^2.8.0",
     "sass": "^1.71.1",
     "sass-loader": "^14.1.1",
@@ -68,6 +70,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.7",
+    "concurrently": "^9.0.1",
     "dotenv-defaults": "^5.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

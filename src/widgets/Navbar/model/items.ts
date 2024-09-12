@@ -1,4 +1,4 @@
-import { RoutesPaths } from 'shared/config/routerConfig/rounterConfig';
+import { RoutesPaths } from 'app/providers/router/routerConfig/rounterConfig';
 
 export interface NavbarItemType {
 	path: string;

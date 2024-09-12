@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import { advertisementsDetailsActions } from 'entities/AdvertisementDetails';
 import { notificationsListActions } from 'entities/NotificationsList';
 import { IAdvertisement, NotificationTypes } from 'shared/types';
@@ -8,13 +10,11 @@ import {
 } from '../../selectors/getEditAdvertisementFormForm/getEditAdvertisementFormForm';
 
 export const editUserAdvertisement =
-	createAsyncThunk<void, string>
+	createAsyncThunk<void, string, ThunkConfig<void>>
 	(
 		'editAdvertisement/editUserAdvertisement',
 		async (id, thunkAPI) => {
 			try {
-				// TODO типизировать thunk
-				// @ts-expect-error отсутствует типизация для thunk
 				const advertisementForm = getEditAdvertisementFormForm(thunkAPI.getState());
 
 				// в ответ приходит обновленное объявление

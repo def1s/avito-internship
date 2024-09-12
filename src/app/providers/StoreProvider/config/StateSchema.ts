@@ -1,4 +1,5 @@
 import { Action, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import { Axios } from 'axios';
 import { CreateAdvertisementFormSchema } from 'features/CreateAdvertisement';
 import { EditAdvertisementFormSchema } from 'features/EditAdvertisement';
 import { AdvertisementDetailsSchema } from 'entities/AdvertisementDetails';
@@ -29,4 +30,9 @@ export interface ReducerManager {
 // расширение стандартных полей store
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 	reducerManager: ReducerManager
+}
+
+export interface ThunkConfig<T> {
+	rejectValue: T;
+	state: StateSchema;
 }

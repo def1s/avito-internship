@@ -1,6 +1,6 @@
 import { memo, Suspense, useCallback } from 'react';
 import { Route, RouteProps, Routes } from 'react-router-dom';
-import { routerConfig } from 'shared/config/routerConfig/rounterConfig';
+import { routerConfig } from 'app/providers/router/routerConfig/rounterConfig';
 import { Loader } from 'shared/ui/Loader/Loader';
 
 // провайдер и функция для отрисовки страниц исходя из конфига

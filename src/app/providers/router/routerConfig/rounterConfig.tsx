@@ -1,12 +1,13 @@
-import { RouteProps } from 'react-router-dom';
-/* eslint-disable @conarti/feature-sliced/layers-slices */
+import { Navigate, RouteProps } from 'react-router-dom';
 import { AdvertisementPage } from 'pages/AdvertisementPage';
 import { AdvertisementsListPage } from 'pages/AdvertisementsPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { OrdersListPage } from 'pages/OrdersPage';
-/* eslint-enable @conarti/feature-sliced/layers-slices */
+
+// Конфигурация путей всего приложения.
 
 export enum Routes {
+	MAIN = 'main',
 	ADVERTISEMENT = 'advertisement',
 	ADVERTISEMENTS_LIST = 'advertisementList',
 	ORDERS_LIST = 'ordersList',
@@ -14,6 +15,7 @@ export enum Routes {
 }
 
 export const RoutesPaths: Record<Routes, string> = {
+	[Routes.MAIN]: '/',
 	[Routes.ADVERTISEMENT]: '/advertisements/:id',
 	[Routes.ADVERTISEMENTS_LIST]: '/advertisements',
 	[Routes.ORDERS_LIST]: '/orders',
@@ -22,6 +24,11 @@ export const RoutesPaths: Record<Routes, string> = {
 };
 
 export const routerConfig: Record<Routes, RouteProps> = {
+	// должна быть главная страница, но сейчас просто редирект на объявления
+	[Routes.MAIN]: {
+		path: RoutesPaths.main,
+		element: <Navigate to={RoutesPaths.advertisementList}/>
+	},
 	[Routes.ADVERTISEMENT]: {
 		path: RoutesPaths.advertisement,
 		element: <AdvertisementPage />

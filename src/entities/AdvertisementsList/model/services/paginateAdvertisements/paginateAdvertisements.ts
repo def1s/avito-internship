@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import { IAdvertisement } from 'shared/types';
 import {
 	getAdvertisementsListLimit
@@ -16,18 +18,14 @@ import {
 
 
 export const paginateAdvertisements =
-	createAsyncThunk<IAdvertisement[], void, { rejectValue: string }>
+	createAsyncThunk<IAdvertisement[], void, ThunkConfig<string>>
 	(
 		'advertisementsList/paginateAdvertisements',
 		async (_, thunkAPI) => {
 			try {
-				// @ts-expect-error нет типизации для thunk
 				const limit = getAdvertisementsListLimit(thunkAPI.getState());
-				// @ts-expect-error нет типизации для thunk
 				const start = getAdvertisementsListStart(thunkAPI.getState());
-				// @ts-expect-error нет типизации для thunk
 				const offset = getAdvertisementsListOffset(thunkAPI.getState());
-				// @ts-expect-error нет типизации для thunk
 				const searchStr = getAdvertisementsListSearchStr(thunkAPI.getState());
 
 				const response =

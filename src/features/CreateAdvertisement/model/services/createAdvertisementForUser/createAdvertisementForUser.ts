@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import { advertisementsListActions, getAdvertisementsListIsEnd } from 'entities/AdvertisementsList';
 import { notificationsListActions } from 'entities/NotificationsList';
 import { IAdvertisement, NotificationTypes } from 'shared/types';
@@ -8,13 +10,11 @@ import {
 } from '../../selectors/getCreateAdvertisementFormForm/getCreateAdvertisementFormForm';
 
 export const createAdvertisementForUser =
-	createAsyncThunk<void, void>
+	createAsyncThunk<void, void, ThunkConfig<void>>
 	(
 		'createAdvertisement/createAdvertisementForUser',
 		async (_, thunkAPI) => {
 			try {
-				// TODO типизировать thunk
-				// @ts-expect-error отсутствует типизация для thunk
 				const advertisementForm = getCreateAdvertisementFormForm(thunkAPI.getState());
 
 				const response =
@@ -24,7 +24,6 @@ export const createAdvertisementForUser =
 					throw new Error('Что-то пошло не так');
 				}
 
-				// @ts-expect-error отсутствует типизация для thunk
 				const isEnd = getAdvertisementsListIsEnd(thunkAPI.getState());
 				// после добавления объявления будем обновлять список только если уже находимся на последней странице
 				if (isEnd) {
