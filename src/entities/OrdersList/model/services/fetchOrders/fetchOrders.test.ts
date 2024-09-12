@@ -58,6 +58,7 @@ describe('fetchOrders', () => {
 
 	beforeEach(() => {
 		// Мокаем значения селекторов
+		// @ts-expect-error типизация
 		jest.mocked(getOrdersListFilter).mockReturnValue('0'); // Filter by status 0
 		jest.mocked(getOrdersListSort).mockReturnValue('createdAt'); // Sort by createdAt
 	});
