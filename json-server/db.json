@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Старинный стул",
-      "description": "Очень красивый и редкий предмет мебели из дуба.",
+      "description": "Очень красивый и редкий предмет мебели из дуба. Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.",
       "price": 2000,
       "createdAt": "2022-08-12T20:16:55.351Z",
       "views": 20,
@@ -261,105 +261,9 @@
       "imageUrl": ""
     },
     {
-      "id": "27",
-      "name": "Массажное кресло",
-      "description": "Кресло с функцией массажа и подогревом.",
-      "price": 150000,
-      "createdAt": "2023-11-15T20:16:55.351Z",
-      "views": 150,
-      "likes": 5,
-      "imageUrl": ""
-    },
-    {
-      "id": "28",
-      "name": "Электросамокат",
-      "description": "Самокат с запасом хода до 50 км.",
-      "price": 35000,
-      "createdAt": "2024-01-05T20:16:55.351Z",
-      "views": 3500,
-      "likes": 200,
-      "imageUrl": ""
-    },
-    {
-      "id": "29",
-      "name": "Настольная игра",
-      "description": "Интересная игра для компании от 2 до 6 человек.",
-      "price": 1500,
-      "createdAt": "2024-06-20T20:16:55.351Z",
-      "views": 700,
-      "likes": 100,
-      "imageUrl": ""
-    },
-    {
-      "id": "30",
-      "name": "Электронная книга",
-      "description": "Читалка с экраном на электронных чернилах.",
-      "price": 8000,
-      "createdAt": "2024-02-18T20:16:55.351Z",
-      "views": 900,
-      "likes": 75,
-      "imageUrl": ""
-    },
-    {
-      "id": "e9e8",
-      "name": "BMW",
-      "description": "Дорого",
-      "price": 1000000000000,
-      "imageUrl": "https://avatars.mds.yandex.net/get-verba/1540742/2a00000180d7fa047e2e09e71e665301c310/cattouchret"
-    },
-    {
-      "id": "a3b4",
-      "name": "Fdfdf",
-      "description": "dfdfdf",
-      "price": 34340,
-      "imageUrl": "https://avatars.mds.yandex.net/get-verba/1540742/2a00000180d7fa047e2e09e71e665301c310/cattouchret"
-    },
-    {
-      "id": "7d17",
-      "name": "dfdf",
-      "description": "dfdfdf",
-      "price": 343,
-      "imageUrl": "https://avatars.mds.yandex.net/get-verba/1540742/2a00000180d7fa047e2e09e71e665301c310/cattouchret"
-    },
-    {
-      "id": "f1c6",
-      "name": "вавав",
-      "description": "вавава",
-      "price": 0,
-      "imageUrl": "https://avatars.mds.yandex.net/get-verba/1540742/2a00000180d7fa047e2e09e71e665301c310/cattouchret"
-    },
-    {
-      "id": "7c2a",
-      "name": "вава",
-      "description": "вава",
-      "price": 23230,
-      "imageUrl": "https://avatars.mds.yandex.net/get-verba/1540742/2a00000180d7fa047e2e09e71e665301c310/cattouchret"
-    },
-    {
-      "id": "3765",
-      "name": "",
+      "id": "0a19",
+      "name": "ыфвафывафыва",
       "description": "",
-      "price": 0,
-      "imageUrl": ""
-    },
-    {
-      "id": "2e5c",
-      "name": "",
-      "description": "",
-      "price": 0,
-      "imageUrl": ""
-    },
-    {
-      "id": "777e",
-      "name": "fgtyhujikolp",
-      "description": "",
-      "price": null,
-      "imageUrl": ""
-    },
-    {
-      "id": "a0b7",
-      "name": "щдлшорипмас",
-      "description": "отрипмасвчыяф",
       "price": null,
       "imageUrl": ""
     }

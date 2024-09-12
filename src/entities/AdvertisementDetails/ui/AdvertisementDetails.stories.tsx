@@ -18,7 +18,7 @@ const adv = {
 	'createdAt': '2022-08-12T20:16:55.351Z',
 	'views': 20,
 	'likes': 2,
-	'imageUrl': 'https://get.wallhere.com/photo/2048x1280-px-animals-baby-cat-cats-cute-fat-fluffy-grass-grey-kitten-kittens-1913313.jpg'
+	'imageUrl': 'https://avatars.mds.yandex.net/i?id=c04ef7884f3726e405ad211b27969b54_l-5275813-images-thumbs&n=13'
 };
 
 export const Default: Story = {
