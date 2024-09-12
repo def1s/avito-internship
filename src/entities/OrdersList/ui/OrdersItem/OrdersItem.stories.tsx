@@ -9,7 +9,6 @@ const meta: Meta<typeof OrdersItem> = {
 export default meta;
 type Story = StoryObj<typeof OrdersItem>;
 
-// TODO описать больше сторисов
 const order = {
 	id: '1',
 	status: 0,

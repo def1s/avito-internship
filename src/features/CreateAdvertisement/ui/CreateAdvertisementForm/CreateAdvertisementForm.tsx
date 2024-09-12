@@ -65,7 +65,6 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 	const renderAdvertisementForm = () => {
 		return (
 			<>
-				{/* TODO написать предпросмотр картинки */}
 				<Input
 					label='Картинка'
 					className={cls.input}
@@ -82,6 +81,7 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					value={advertisementForm?.name}
 					onChange={onChangeName}
 					disabled={isLoading}
+					maxLength={100}
 				/>
 
 				<Input
@@ -91,6 +91,7 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					value={advertisementForm?.price !== null ? advertisementForm?.price : ''}
 					onChange={onChangePrice}
 					disabled={isLoading}
+					min={0}
 				/>
 
 				<InputArea
@@ -112,7 +113,6 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 			reducers={initialReducers}
 			removeAfterUnmount
 		>
-			{/* TODO написать валидацию для всех полей */}
 			<form
 				className={classNames(cls.CreateAdvertisementForm, {}, [className])}
 				onSubmit={onSubmit}

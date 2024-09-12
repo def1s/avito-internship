@@ -5,19 +5,9 @@
 	width: 100%;
 	min-height: 300px;
 
-	.imageWrapper {
-		position: relative;
-		margin-bottom: 20px;
-		max-width: 600px;
-		min-height: 300px;
-		background-color: var(--light-gray-bg-color);
-	}
-
 	.image {
-		max-height: 100%;
-		max-width: 100%;
-		margin: 0 auto;
-		display: block;
+		max-width: 500px;
+		min-height: 300px;
 	}
 
 	.infoWrapper {
@@ -33,6 +23,7 @@
 		font-size: 24px;
 		font-weight: bold;
 		margin-bottom: 8px;
+		overflow: hidden;
 	}
 
 	.price {
@@ -45,6 +36,7 @@
 		margin-bottom: 16px;
 		color: #333;
 		line-height: var(--big-indent);
+		overflow: hidden;
 	}
 
 	.meta {

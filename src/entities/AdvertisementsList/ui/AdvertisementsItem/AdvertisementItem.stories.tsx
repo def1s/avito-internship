@@ -9,8 +9,6 @@ const meta: Meta<typeof AdvertisementsItem> = {
 export default meta;
 type Story = StoryObj<typeof AdvertisementsItem>;
 
-// TODO описать больше сторисов
-
 export const Default: Story = {
 	args: {
 		advertisement: {

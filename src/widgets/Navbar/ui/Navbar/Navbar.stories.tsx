@@ -9,7 +9,6 @@ const meta: Meta<typeof Navbar> = {
 export default meta;
 type Story = StoryObj<typeof Navbar>;
 
-// TODO описать больше сторисов
 export const Default: Story = {
 	args: {
 

@@ -9,7 +9,6 @@ const meta: Meta<typeof AdvertisementDetails> = {
 export default meta;
 type Story = StoryObj<typeof AdvertisementDetails>;
 
-// TODO описать больше сторисов
 const adv = {
 	'id': '1',
 	'name': 'Стул старинный',

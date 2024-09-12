@@ -1,7 +1,6 @@
 import { FormEvent, memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { createAdvertisementFormActions } from 'features/CreateAdvertisement/model/slice/createAdvertisementFormSlice';
 import { getAdvertisementDetailsAdvertisement } from 'entities/AdvertisementDetails';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -83,7 +82,6 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 	const renderAdvertisementForm = () => {
 		return (
 			<>
-				{/* TODO написать предпросмотр картинки */}
 				<Input
 					label='Картинка'
 					className={cls.input}
@@ -100,6 +98,7 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 					value={advertisementForm?.name}
 					onChange={onChangeName}
 					disabled={isLoading}
+					minLength={100}
 				/>
 
 				<Input
@@ -109,6 +108,7 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 					value={advertisementForm?.price !== null ? advertisementForm?.price : ''}
 					onChange={onChangePrice}
 					disabled={isLoading}
+					min={0}
 				/>
 
 				<InputArea
@@ -130,8 +130,6 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 			reducers={initialReducers}
 			removeAfterUnmount
 		>
-
-			{/* TODO написать валидацию для всех полей */}
 			<form
 				className={classNames(cls.EditAdvertisementForm, {}, [className])}
 				onSubmit={onSubmit}

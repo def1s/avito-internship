@@ -11,7 +11,6 @@ const defaultAsyncReducers: ReducersList = {
 };
 
 // декоратор для установки произвольного значения стейтов и тестирования компонентов в сторибуке
-// TODO декоратор НЕ работает, выяснить причину
 // работает, если указывать редьюсер вручную
 export const StoreDecorator = (
 	state: DeepPartial<StateSchema>,

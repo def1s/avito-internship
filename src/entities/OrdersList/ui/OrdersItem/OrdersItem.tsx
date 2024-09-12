@@ -73,9 +73,10 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 				<span>Сумма:</span> <span>{formatNumber(order.total)} ₽</span>
 			</div>
 
-			{/* TODO отрисовывать только на некоторые статусы, (не архив и тд) */}
 			{
-				order.status === IOrderStatus.RECEIVED && order.finishedAt &&
+				(order.status === IOrderStatus.RECEIVED ||
+				order.status === IOrderStatus.ARCHIVED) &&
+				order.finishedAt &&
 				<div className={cls.item}>
 					<span>Заказ завершен:</span> <span>{formatDate(new Date(order.finishedAt))}</span>
 				</div>
@@ -120,9 +121,12 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 					{showItems ? 'Скрыть товары' : 'Показать товары'}
 				</Button>
 
-				{/* TODO отрисовывать только на некоторые статусы, (не архив и тд) */}
-				{order.status !== IOrderStatus.RECEIVED && CompleteOrderFeature &&
-					<CompleteOrderFeature id={Number(order.id)}/>}
+				{
+					order.status !== IOrderStatus.RECEIVED &&
+					order.status !== IOrderStatus.ARCHIVED &&
+					CompleteOrderFeature &&
+					<CompleteOrderFeature id={Number(order.id)}/>
+				}
 			</div>
 
 			{showItems && renderItemsList(order)}
