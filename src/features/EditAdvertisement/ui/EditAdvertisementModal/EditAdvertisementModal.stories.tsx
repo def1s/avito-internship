@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { editAdvertisementFormReducer } from '../../model/slice/editAdvertisementFormSlice';
 import { EditAdvertisementModal } from './EditAdvertisementModal';
 
 const meta: Meta<typeof EditAdvertisementModal> = {
@@ -25,11 +26,11 @@ export const Loading: Story = {
 		StoreDecorator(
 			{
 				editAdvertisementForm: {
-					isLoading: true,
-					advertisementForm: {
-						name: '34343434'
-					}
+					isLoading: true
 				}
+			},
+			{
+				editAdvertisementForm: editAdvertisementFormReducer
 			}
 		)
 	]

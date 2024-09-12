@@ -12,7 +12,7 @@
     },
     {
       "id": "2",
-      "name": "Старинный стул",
+      "name": "Ведро снега",
       "description": "Последняя возможность купить по выгодной цене!",
       "price": 3000,
       "createdAt": "2023-08-12T20:16:55.351Z",
@@ -22,7 +22,7 @@
     },
     {
       "id": "3",
-      "name": "Старинный стул",
+      "name": "Плащ невидимка",
       "description": "Товар для избранных. Почти незаметен.",
       "price": 10000000,
       "createdAt": "2024-08-12T20:16:55.351Z",
@@ -74,7 +74,7 @@
       "id": "8",
       "name": "Старинный стул",
       "description": "Монета царской эпохи.",
-      "price": 150000,
+      "price": 34234324,
       "createdAt": "2024-01-12T20:16:55.351Z",
       "views": 5,
       "likes": 0,
@@ -334,6 +334,34 @@
       "description": "вава",
       "price": 23230,
       "imageUrl": "https://avatars.mds.yandex.net/get-verba/1540742/2a00000180d7fa047e2e09e71e665301c310/cattouchret"
+    },
+    {
+      "id": "3765",
+      "name": "",
+      "description": "",
+      "price": 0,
+      "imageUrl": ""
+    },
+    {
+      "id": "2e5c",
+      "name": "",
+      "description": "",
+      "price": 0,
+      "imageUrl": ""
+    },
+    {
+      "id": "777e",
+      "name": "fgtyhujikolp",
+      "description": "",
+      "price": null,
+      "imageUrl": ""
+    },
+    {
+      "id": "a0b7",
+      "name": "щдлшорипмас",
+      "description": "отрипмасвчыяф",
+      "price": null,
+      "imageUrl": ""
     }
   ],
   "orders": [

@@ -9,8 +9,6 @@ const App = () => {
 		<div className={'App'}>
 			<Navbar/>
 
-			{/* TODO редиректить с '/' на объявления */}
-
 			<AppRouter/>
 
 			<NotificationsList/>

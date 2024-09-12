@@ -6,7 +6,7 @@ export interface IAdvertisement {
 	/* Описание. */
 	description?: string;
 	/* Цена. */
-	price: number;
+	price: number | null;
 	/* Дата и время создания. */
 	createdAt: string;
 	/* Количество просмотров. */

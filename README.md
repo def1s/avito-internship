@@ -18,9 +18,9 @@ npm run start:dev - запуск сервера + frontend проекта в dev
 - `npm run lint:ts:fix` - Исправление ts файлов линтером
 - `npm run lint:scss` - Проверка scss файлов style линтером
 - `npm run lint:scss:fix` - Исправление scss файлов style линтером
-- `npm run storybook` - запуск Storybook
+- `npm run storybook` - Запуск Storybook
 - `npm run storybook:build` - Сборка storybook билда
-- 
+
 ----
 
 ## Архитектура проекта

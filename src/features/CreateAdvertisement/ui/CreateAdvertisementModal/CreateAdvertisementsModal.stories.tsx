@@ -25,11 +25,11 @@ export const Loading: Story = {
 		StoreDecorator(
 			{
 				createAdvertisementForm: {
-					isLoading: true,
-					advertisementForm: {
-						name: '34343434'
-					}
+					isLoading: true
 				},
+			},
+			{
+				createAdvertisementForm: createAdvertisementFormReducer
 			}
 		)
 	]

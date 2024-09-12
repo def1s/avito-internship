@@ -47,7 +47,7 @@ export const AdvertisementDetails = memo((props: AdvertisementDetailsProps) => {
 					{/* заголовок и цена */}
 					<div className={cls.info}>
 						<h1 className={cls.title}>{advertisement.name}</h1>
-						<p className={cls.price}>{formatNumber(advertisement.price)} ₽</p>
+						<p className={cls.price}>{formatNumber(advertisement.price || 0)} ₽</p>
 					</div>
 
 					{/* TODO скрывать слишком длинное описание под хайд */}

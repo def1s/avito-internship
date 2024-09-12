@@ -6,6 +6,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { InputArea } from 'shared/ui/InputArea/InputArea';
+import { Loader } from 'shared/ui/Loader/Loader';
 import { Text } from 'shared/ui/Text/Text';
 import {
 	getCreateAdvertisementFormForm
@@ -49,7 +50,7 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 	}, [dispatch]);
 
 	const onChangePrice = useCallback((price: string) => {
-		dispatch(createAdvertisementFormActions.updateAdvertisementForm({ price: Number(price) }));
+		dispatch(createAdvertisementFormActions.updateAdvertisementForm({ price: price === '' ? null : Number(price) }));
 	}, [dispatch]);
 
 	const onChangeDescription = useCallback((description: string) => {
@@ -71,6 +72,7 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					type='url'
 					value={advertisementForm?.imageUrl}
 					onChange={onChangeImageUrl}
+					disabled={isLoading}
 				/>
 
 				<Input
@@ -79,14 +81,16 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					type='text'
 					value={advertisementForm?.name}
 					onChange={onChangeName}
+					disabled={isLoading}
 				/>
 
 				<Input
 					label='Цена'
 					className={cls.input}
 					type='number'
-					value={advertisementForm?.price}
+					value={advertisementForm?.price !== null ? advertisementForm?.price : ''}
 					onChange={onChangePrice}
+					disabled={isLoading}
 				/>
 
 				<InputArea
@@ -95,9 +99,10 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					type='text'
 					value={advertisementForm?.description}
 					onChange={onChangeDescription}
+					disabled={isLoading}
 				/>
 
-				<Button className={cls.submitBtn}>Опубликовать объявление</Button>
+				<Button className={cls.submitBtn} disabled={isLoading}>Опубликовать объявление</Button>
 			</>
 		);
 	};
@@ -117,10 +122,10 @@ export const CreateAdvertisementForm = memo((props: CreateAdvertisementFormProps
 					text='В этой форме вы можете создать свое объявление'
 					className={cls.header}
 				/>
-				{/* TODO вставить Loader и Blur */}
-				{isLoading ? 'Загрузка...' : renderAdvertisementForm()}
 
-				{/*	TODO сделать вывод ошибки, сейчас ничего нет! */}
+				{isLoading && <Loader className={cls.loader}/>}
+
+				{renderAdvertisementForm()}
 			</form>
 
 		</DynamicModuleLoader>

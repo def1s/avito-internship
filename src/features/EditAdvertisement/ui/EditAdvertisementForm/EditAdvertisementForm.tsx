@@ -1,6 +1,7 @@
 import { FormEvent, memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { createAdvertisementFormActions } from 'features/CreateAdvertisement/model/slice/createAdvertisementFormSlice';
 import { getAdvertisementDetailsAdvertisement } from 'entities/AdvertisementDetails';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -8,6 +9,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { InputArea } from 'shared/ui/InputArea/InputArea';
+import { Loader } from 'shared/ui/Loader/Loader';
 import { Text } from 'shared/ui/Text/Text';
 import {
 	getEditAdvertisementFormForm
@@ -61,7 +63,7 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 	}, [dispatch]);
 
 	const onChangePrice = useCallback((price: string) => {
-		dispatch(editAdvertisementFormActions.updateAdvertisementForm({ price: Number(price) }));
+		dispatch(editAdvertisementFormActions.updateAdvertisementForm({ price: price === '' ? null : Number(price) }));
 	}, [dispatch]);
 
 	const onChangeDescription = useCallback((description: string) => {
@@ -88,6 +90,7 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 					type='url'
 					value={advertisementForm?.imageUrl}
 					onChange={onChangeImageUrl}
+					disabled={isLoading}
 				/>
 
 				<Input
@@ -96,14 +99,16 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 					type='text'
 					value={advertisementForm?.name}
 					onChange={onChangeName}
+					disabled={isLoading}
 				/>
 
 				<Input
 					label='Цена'
 					className={cls.input}
 					type='number'
-					value={advertisementForm?.price}
+					value={advertisementForm?.price !== null ? advertisementForm?.price : ''}
 					onChange={onChangePrice}
+					disabled={isLoading}
 				/>
 
 				<InputArea
@@ -112,9 +117,10 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 					type='text'
 					value={advertisementForm?.description}
 					onChange={onChangeDescription}
+					disabled={isLoading}
 				/>
 
-				<Button className={cls.submitBtn}>Сохранить изменения</Button>
+				<Button className={cls.submitBtn} disabled={isLoading}>Сохранить изменения</Button>
 			</>
 		);
 	};
@@ -136,10 +142,9 @@ export const EditAdvertisementForm = memo((props: EditAdvertisementFormProps) =>
 					className={cls.header}
 				/>
 
-				{/* TODO вставить Loader и Blur */}
-				{isLoading ? 'Загрузка...' : renderAdvertisementForm()}
+				{isLoading && <Loader className={cls.loader}/>}
 
-				{/*	TODO сделать вывод ошибки, сейчас ничего нет! */}
+				{renderAdvertisementForm()}
 			</form>
 
 		</DynamicModuleLoader>

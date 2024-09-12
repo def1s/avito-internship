@@ -1,6 +1,6 @@
 .CreateAdvertisementForm {
 	width: 400px;
-	min-height: 300px;
+	min-height: 400px;
 
 	.header {
 		margin-bottom: var(--medium-indent);
@@ -23,5 +23,12 @@
 	.submitBtn {
 		width: 100%;
 		height: 50px;
+	}
+
+	.loader {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }

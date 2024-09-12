@@ -10,4 +10,8 @@
 	&:hover {
 		background-color: #005bb5;
 	}
+
+	&:disabled {
+		background-color: var(--mid-gray-bg-color);
+	}
 }

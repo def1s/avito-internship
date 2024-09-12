@@ -44,7 +44,7 @@ export const AdvertisementsItem = memo((props: AdvertisementsItemProps) => {
 			<div className={cls.name}>{textLengthValidator(advertisement.name, 37)}</div>
 
 			{/* TODO провалидировать длину цены */}
-			<div className={cls.price}>{formatNumber(advertisement.price)} ₽</div>
+			<div className={cls.price}>{formatNumber(advertisement.price || 0)} ₽</div>
 
 			<div className={cls.additionalInfo}>
 				<div className={cls.likes}>

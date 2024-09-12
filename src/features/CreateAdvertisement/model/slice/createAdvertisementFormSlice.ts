@@ -9,8 +9,7 @@ const initialState: CreateAdvertisementFormSchema = {
 	advertisementForm: {
 		name: '',
 		description: '',
-		// TODO баг, при котором всегда появляется 0 в начале цены или не уходит вовсе
-		price: 0,
+		price: null,
 		imageUrl: ''
 	},
 	isLoading: false
