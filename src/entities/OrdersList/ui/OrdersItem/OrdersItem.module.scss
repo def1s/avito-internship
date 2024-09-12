@@ -1,0 +1,95 @@
+.OrdersItem {
+	width: 100%;
+	padding: var(--big-indent);
+	margin-bottom: 20px;
+	box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: translateY(-3px);
+	}
+
+	.buttonsWrapper {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 600;
+		margin-bottom: 16px;
+
+		.orderNumber {
+			font-size: var(--font-size-xl);
+		}
+
+		.status {
+			font-size: var(--font-size-m);
+			color: var(--blue-color);
+		}
+	}
+
+	.details {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-bottom: 16px;
+
+		.item {
+			width: 32%;
+			margin-bottom: 10px;
+
+			span {
+				font-size: 16px;
+				color: #666;
+			}
+		}
+	}
+
+	.itemsList {
+		margin-top: 16px;
+
+		.itemDetail {
+			padding: 8px 0;
+			border-bottom: 1px solid #ddd;
+			display: flex;
+			align-items: end;
+			gap: 5px;
+			text-decoration: none;
+			transition: background-color 0.2s ease;
+
+			&:hover {
+				background-color: var(--light-gray-bg-color);
+			}
+
+			.imageWrapper {
+				width: 50px;
+				height: 50px;
+				background-color: var(--mid-gray-bg-color);
+				position: relative;
+
+				.image {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				.notFoundIcon {
+					width: 20px;
+					height: 20px;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			span {
+				font-size: 16px;
+				color: #333;
+			}
+		}
+	}
+}

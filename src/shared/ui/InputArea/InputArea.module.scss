@@ -1,0 +1,38 @@
+.inputAreaWrapper {
+	position: relative;
+
+	.floatingLabel {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: var(--medium-indent);
+		font-size: var(--font-size-m);
+		pointer-events: none;
+		transition: all 0.3s ease;
+	}
+
+	.InputArea {
+		display: block;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: var(--medium-round);
+		padding: var(--big-indent) var(--medium-indent) 0;
+
+		&:disabled {
+			background-color: var(--light-gray-bg-color);
+			cursor: wait;
+		}
+
+		&::placeholder {
+			color: rgb(255 255 255 / 50%);
+		}
+
+		&:not(:placeholder-shown) + .floatingLabel,
+		&:focus + .floatingLabel {
+			top: 0;
+			transform: translateY(50%);
+			left: var(--medium-indent);
+			font-size: 12px;
+		}
+	}
+}

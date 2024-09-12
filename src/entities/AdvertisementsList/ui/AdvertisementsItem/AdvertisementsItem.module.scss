@@ -1,0 +1,69 @@
+.AdvertisementsItem {
+	width: 200px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	margin-bottom: var(--medium-indent);
+	overflow: hidden;
+
+	&:hover {
+		background-color: var(--light-gray-bg-color);
+		transform: translateY(-3px);
+	}
+
+	.imageWrapper {
+		width: 200px;
+		height: 200px;
+		position: relative;
+		background-color: var(--mid-gray-bg-color);
+
+		.image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.notFoundIcon {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	.name {
+		color: var(--blue-color);
+		font-weight: bold;
+		margin-top: 2px;
+	}
+
+	.price {
+		font-weight: 500;
+		margin-top: 2px;
+		color: #000;
+	}
+
+	.additionalInfo {
+		display: flex;
+		margin-top: 2px;
+		color: #000;
+		width: 200px;
+
+		.likes, .views {
+			width: 100%;
+			display: flex;
+		}
+
+		.heart, .view {
+			width: 18px;
+			height: 18px;
+		}
+	}
+
+	&:visited {
+		.name {
+			color: var(--visited-color);
+		}
+	}
+}

@@ -7,7 +7,9 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
-		'plugin:react-hooks/recommended'
+		'plugin:react-hooks/recommended',
+		'plugin:storybook/recommended',
+		'plugin:@conarti/feature-sliced/recommended'
 	],
 	'overrides': [
 		{
@@ -53,5 +55,6 @@ module.exports = {
 		'object-curly-spacing': ['error', 'always'],
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'error',
+		'react/display-name': 'off'
 	}
 };

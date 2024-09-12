@@ -1,0 +1,1 @@
+export { AdvertisementsPageAsync as AdvertisementsListPage } from './ui/AdvertisementsPage.async';

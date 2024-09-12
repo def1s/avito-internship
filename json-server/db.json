@@ -1,0 +1,350 @@
+{
+  "advertisements": [
+    {
+      "id": "1",
+      "name": "Старинный стул",
+      "description": "Очень красивый и редкий предмет мебели из дуба. Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.Очень красивый и редкий предмет мебели из дуба.",
+      "price": 2000,
+      "createdAt": "2022-08-12T20:16:55.351Z",
+      "views": 20,
+      "likes": 2,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=c04ef7884f3726e405ad211b27969b54_l-5275813-images-thumbs&n=13"
+    },
+    {
+      "id": "2",
+      "name": "Ведро снега",
+      "description": "Последняя возможность купить по выгодной цене!",
+      "price": 3000,
+      "createdAt": "2023-08-12T20:16:55.351Z",
+      "views": 77832,
+      "likes": 45666,
+      "imageUrl": "https://thumbs.dreamstime.com/b/snow-bucket-gloves-covered-winter-103987267.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Плащ невидимка",
+      "description": "Товар для избранных. Почти незаметен.",
+      "price": 10000000,
+      "createdAt": "2024-08-12T20:16:55.351Z",
+      "views": 900,
+      "likes": 19,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=3f48d2cb85c6ae5589966589d6930152_l-5268994-images-thumbs&n=13"
+    },
+    {
+      "id": "4",
+      "name": "Старинный стул",
+      "description": "Стильный и модный товар, как у бабушки в деревне :)))",
+      "price": 5000,
+      "createdAt": "2024-07-12T20:16:55.351Z",
+      "views": 2000000,
+      "likes": 2,
+      "imageUrl": ""
+    },
+    {
+      "id": "5",
+      "name": "Старинный стул",
+      "description": "Полный курс по программированию за 30 дней.",
+      "price": 1500,
+      "createdAt": "2021-05-01T14:00:00.351Z",
+      "views": 120,
+      "likes": 10,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=399ac4eed635b161e29b3464d2550696_l-6450036-images-thumbs&n=13"
+    },
+    {
+      "id": "6",
+      "name": "Старинный стул",
+      "description": "Оригинальная чашка с забавным рисунком.",
+      "price": 700,
+      "createdAt": "2023-12-25T08:30:55.351Z",
+      "views": 32000,
+      "likes": 1200,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=f43360d683c20df02f1e6ac9f295cbd38828ae90-12155387-images-thumbs&n=13"
+    },
+    {
+      "id": "7",
+      "name": "Старинный стул",
+      "description": "Работает, но иногда перезагружается сам.",
+      "price": 50000,
+      "createdAt": "2023-02-10T10:20:55.351Z",
+      "views": 1000000000000,
+      "likes": 1000000000000,
+      "imageUrl": ""
+    },
+    {
+      "id": "8",
+      "name": "Старинный стул",
+      "description": "Монета царской эпохи.",
+      "price": 34234324,
+      "createdAt": "2024-01-12T20:16:55.351Z",
+      "views": 5,
+      "likes": 0,
+      "imageUrl": "https://media.komus.ru/medias/sys_master/root/hb5/h7e/9515566661662/829008-1-800Wx800H.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Старинный стул",
+      "description": "Антикварный чайник с ручной росписью.",
+      "price": 3000,
+      "createdAt": "2023-06-15T09:10:55.351Z",
+      "views": 50,
+      "likes": 3,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=64a90294e767b7dd477b145ae926b2fa_l-5249054-images-thumbs&n=13"
+    },
+    {
+      "id": "10",
+      "name": "Старинный стул",
+      "description": "Последняя модель с поддержкой 4K.",
+      "price": 45000,
+      "createdAt": "2024-04-12T20:16:55.351Z",
+      "views": 15000,
+      "likes": 500,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=23dba004d94f7314141cc0eafc46a7ced729d161-9041991-images-thumbs&n=13"
+    },
+    {
+      "id": "11",
+      "name": "Старинный стул",
+      "description": "Ультрасовременная кофемашина для дома.",
+      "price": 25000,
+      "createdAt": "2023-11-10T11:50:55.351Z",
+      "views": 200,
+      "likes": 10,
+      "imageUrl": "https://avatars.mds.yandex.net/get-mpic/4579830/img_id5250076962964896035.jpeg/orig"
+    },
+    {
+      "id": "12",
+      "name": "Телефон 3310",
+      "description": "Легендарная модель с бесконечной батареей.",
+      "price": 500,
+      "createdAt": "2023-10-10T20:16:55.351Z",
+      "views": 500000,
+      "likes": 50000,
+      "imageUrl": ""
+    },
+    {
+      "id": "13",
+      "name": "Автомобиль на запчасти",
+      "description": "Старый автомобиль, но можно разобрать на детали.",
+      "price": 20000,
+      "createdAt": "2022-09-01T20:16:55.351Z",
+      "views": 200,
+      "likes": 15,
+      "imageUrl": ""
+    },
+    {
+      "id": "14",
+      "name": "Смарт-часы",
+      "description": "Новые смарт-часы с функцией измерения пульса.",
+      "price": 15000,
+      "createdAt": "2023-12-01T20:16:55.351Z",
+      "views": 1500,
+      "likes": 100,
+      "imageUrl": ""
+    },
+    {
+      "id": "15",
+      "name": "Кружка невидимка",
+      "description": "Кружка, которая становится невидимой при нагреве.",
+      "price": 2500,
+      "createdAt": "2024-03-12T10:16:55.351Z",
+      "views": 75,
+      "likes": 7,
+      "imageUrl": ""
+    },
+    {
+      "id": "16",
+      "name": "Настольная лампа",
+      "description": "Современная лампа с регулировкой яркости.",
+      "price": 1200,
+      "createdAt": "2023-07-01T20:16:55.351Z",
+      "views": 300,
+      "likes": 20,
+      "imageUrl": ""
+    },
+    {
+      "id": "17",
+      "name": "Беспроводные наушники",
+      "description": "Наушники с шумоподавлением и длительным зарядом.",
+      "price": 9000,
+      "createdAt": "2023-06-18T20:16:55.351Z",
+      "views": 5000,
+      "likes": 300,
+      "imageUrl": ""
+    },
+    {
+      "id": "18",
+      "name": "Солнечные очки",
+      "description": "Модные очки с UV-защитой.",
+      "price": 800,
+      "createdAt": "2023-08-10T12:16:55.351Z",
+      "views": 100,
+      "likes": 5,
+      "imageUrl": ""
+    },
+    {
+      "id": "19",
+      "name": "Картина маслом",
+      "description": "Ручная работа, уникальное произведение искусства.",
+      "price": 300000,
+      "createdAt": "2024-05-15T20:16:55.351Z",
+      "views": 250,
+      "likes": 25,
+      "imageUrl": ""
+    },
+    {
+      "id": "20",
+      "name": "Древесный уголь",
+      "description": "Мешок угля для барбекю.",
+      "price": 400,
+      "createdAt": "2024-06-01T20:16:55.351Z",
+      "views": 2000,
+      "likes": 100,
+      "imageUrl": ""
+    },
+    {
+      "id": "21",
+      "name": "Электрическая зубная щетка",
+      "description": "Смарт-щетка с различными режимами чистки.",
+      "price": 7000,
+      "createdAt": "2023-09-01T20:16:55.351Z",
+      "views": 750,
+      "likes": 30,
+      "imageUrl": ""
+    },
+    {
+      "id": "22",
+      "name": "Рюкзак для путешествий",
+      "description": "Большой рюкзак для многодневных походов.",
+      "price": 5000,
+      "createdAt": "2023-03-05T20:16:55.351Z",
+      "views": 1500,
+      "likes": 120,
+      "imageUrl": ""
+    },
+    {
+      "id": "23",
+      "name": "Газонокосилка",
+      "description": "Мощная бензиновая газонокосилка.",
+      "price": 25000,
+      "createdAt": "2023-05-15T20:16:55.351Z",
+      "views": 200,
+      "likes": 10,
+      "imageUrl": ""
+    },
+    {
+      "id": "24",
+      "name": "Камера видеонаблюдения",
+      "description": "IP-камера для дома с возможностью удалённого просмотра.",
+      "price": 10000,
+      "createdAt": "2024-02-12T20:16:55.351Z",
+      "views": 500,
+      "likes": 50,
+      "imageUrl": ""
+    },
+    {
+      "id": "25",
+      "name": "Зимняя куртка",
+      "description": "Тёплая куртка с водоотталкивающим покрытием.",
+      "price": 10000,
+      "createdAt": "2023-12-25T20:16:55.351Z",
+      "views": 1000,
+      "likes": 200,
+      "imageUrl": ""
+    },
+    {
+      "id": "26",
+      "name": "Игровая мышь",
+      "description": "Мышь с RGB-подсветкой и 12 кнопками.",
+      "price": 4000,
+      "createdAt": "2023-04-10T20:16:55.351Z",
+      "views": 500,
+      "likes": 50,
+      "imageUrl": ""
+    },
+    {
+      "id": "0a19",
+      "name": "ыфвафывафыва",
+      "description": "",
+      "price": null,
+      "imageUrl": ""
+    },
+    {
+      "id": "9d05",
+      "name": "efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,",
+      "description": "efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,",
+      "price": 45454,
+      "imageUrl": ""
+    },
+    {
+      "id": "d0a4",
+      "name": "sdfasdfdsafa sdfasdfdsafa sdfasdfdsafa sdfasdfdsafa",
+      "description": "",
+      "price": null,
+      "imageUrl": ""
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "status": 4,
+      "createdAt": "2024-08-12T20:20:55.351Z",
+      "finishedAt": "2024-09-12T17:01:35.713Z",
+      "total": 314000,
+      "deliveryWay": "mail",
+      "items": [
+        {
+          "id": "8",
+          "name": "Коллекционная монета",
+          "price": 100000,
+          "createdAt": "2024-08-12T12:16:55.351Z",
+          "views": 200000,
+          "likes": 302,
+          "imageUrl": "https://media.komus.ru/medias/sys_master/root/hb5/h7e/9515566661662/829008-1-800Wx800H.jpg",
+          "count": 3
+        },
+        {
+          "id": "6",
+          "name": "Чашка с принтом",
+          "description": "Оригинальная чашка с забавным рисунком.",
+          "price": 700,
+          "createdAt": "2023-12-25T08:30:55.351Z",
+          "views": 32000,
+          "likes": 1200,
+          "imageUrl": "https://avatars.mds.yandex.net/i?id=f43360d683c20df02f1e6ac9f295cbd38828ae90-12155387-images-thumbs&n=13",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "status": 4,
+      "createdAt": "2024-08-12T20:20:55.351Z",
+      "total": 33000,
+      "deliveryWay": "sdek",
+      "items": [
+        {
+          "id": "9",
+          "name": "Чайник из Китая",
+          "description": "Антикварный чайник с ручной росписью.",
+          "price": 3000,
+          "createdAt": "2023-06-15T09:10:55.351Z",
+          "views": 50,
+          "likes": 3,
+          "imageUrl": "https://avatars.mds.yandex.net/i?id=64a90294e767b7dd477b145ae926b2fa_l-5249054-images-thumbs&n=13",
+          "count": 10
+        },
+        {
+          "id": "27",
+          "name": "Массажное кресло",
+          "description": "Кресло с функцией массажа и подогревом.",
+          "price": 150000,
+          "createdAt": "2023-11-15T20:16:55.351Z",
+          "views": 150,
+          "likes": 5,
+          "imageUrl": "",
+          "count": 10
+        }
+      ],
+      "finishedAt": "2024-09-12T17:10:47.775Z"
+    }
+  ]
+}
