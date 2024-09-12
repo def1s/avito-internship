@@ -1,14 +1,14 @@
 import { memo, Suspense, useCallback } from 'react';
 import { Route, RouteProps, Routes } from 'react-router-dom';
-import { routerConfig } from 'app/providers/router/routerConfig/rounterConfig';
 import { Loader } from 'shared/ui/Loader/Loader';
+import { routerConfig } from '../routerConfig/rounterConfig';
+import cls from './AppRouter.module.scss';
 
 // провайдер и функция для отрисовки страниц исходя из конфига
 export const AppRouter = memo(() => {
 	const renderRoutes = useCallback((route: RouteProps) => {
 		const element = (
-			// TODO поправить Loader
-			<Suspense fallback={<Loader/>}>
+			<Suspense fallback={<Loader className={cls.loader}/>}>
 				{route.element}
 			</Suspense>
 		);

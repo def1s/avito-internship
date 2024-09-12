@@ -15,7 +15,6 @@ interface OrdersItemProps {
 	CompleteOrderFeature?: FC<{ id: number }>;
 }
 
-// TODO вынести в shared, если понадобится где-то еще
 // функция для расшифровки статусов
 const getOrderStatusText = (status: IOrderStatus): string => {
 	switch (status) {
@@ -38,7 +37,6 @@ const getOrderStatusText = (status: IOrderStatus): string => {
 	}
 };
 
-// TODO подумать над разделением на несколько компонентов
 export const OrdersItem = memo((props: OrdersItemProps) => {
 	const {
 		className,
@@ -52,7 +50,7 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 		setShowItems((prev) => !prev);
 	};
 
-	// функция для рендеринга заголовка и статуса заказа
+	// функция для рендеринга заголовка и статуса заказа, можно вынести в отдельный компонент!
 	const renderHeader = (order: IOrder) => (
 		<div className={cls.header}>
 			<span className={cls.orderNumber}>Заказ #{order.id}</span>
@@ -60,7 +58,7 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 		</div>
 	);
 
-	// функция для рендеринга деталей заказа
+	// функция для рендеринга деталей заказа, можно вынести в отдельный компонент!
 	const renderDetails = (order: IOrder) => (
 		<div className={cls.details}>
 			<div className={cls.item}>
@@ -87,7 +85,7 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 		</div>
 	);
 
-	// функция для рендеринга списка товаров
+	// функция для рендеринга списка товаров, можно вынести в отдельный компонент!
 	const renderItemsList = (order: IOrder) => (
 		<div className={cls.itemsList}>
 			{order.items.map((item) => (
@@ -111,7 +109,6 @@ export const OrdersItem = memo((props: OrdersItemProps) => {
 		</div>
 	);
 
-	// TODO провалидировать длину всех полей
 	return (
 		<div className={classNames(cls.OrdersItem, {}, [className])}>
 			{renderHeader(order)}

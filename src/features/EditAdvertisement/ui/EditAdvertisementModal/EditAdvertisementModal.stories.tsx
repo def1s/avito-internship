@@ -11,7 +11,6 @@ const meta: Meta<typeof EditAdvertisementModal> = {
 export default meta;
 type Story = StoryObj<typeof EditAdvertisementModal>;
 
-// TODO сделать StoreDecorator для выставления значений store
 export const Default: Story = {
 	args: {
 		isOpen: true
