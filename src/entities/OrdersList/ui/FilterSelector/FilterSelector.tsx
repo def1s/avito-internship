@@ -1,6 +1,7 @@
 import { ChangeEvent, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Text } from 'shared/ui/Text/Text';
 import { filters } from '../../lib/filters';
 import { ordersListActions } from '../../model/slice/ordersListSlice';
 import cls from './FilterSelector.module.scss';
@@ -21,7 +22,7 @@ export const FilterSelector = memo((props: FilterSelectorProps) => {
 			dispatch(ordersListActions.removeFilter());
 		} else {
 			const selectedValue = +e.target.value;
-			dispatch(ordersListActions.updateFilter(selectedValue));
+			dispatch(ordersListActions.setFilter(selectedValue));
 		}
 	};
 
@@ -35,6 +36,8 @@ export const FilterSelector = memo((props: FilterSelectorProps) => {
     
 	return (
 		<div className={classNames(cls.FilterSelector, {}, [className])}>
+			<Text text='Заказы по статусу:'/>
+
 			<select
 				onChange={onSelectFilter}
 			>

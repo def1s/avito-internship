@@ -6,7 +6,7 @@ import {
 	getOrdersListError,
 	getOrdersListFilter,
 	getOrdersListIsLoading,
-	getOrdersListOrders,
+	getOrdersListOrders, getOrdersListSort,
 	OrdersList,
 	ordersListReducer
 } from 'entities/OrdersList';
@@ -31,10 +31,11 @@ export const UserOrders = memo((props: UserOrdersProps) => {
 
 	const dispatch = useAppDispatch();
 	const filter = useSelector(getOrdersListFilter);
+	const sort = useSelector(getOrdersListSort);
 
 	useEffect(() => {
 		dispatch(fetchOrders());
-	}, [dispatch, filter]);
+	}, [dispatch, filter, sort]);
 
 	const orders = useSelector(getOrdersListOrders);
 	const isLoading = useSelector(getOrdersListIsLoading);

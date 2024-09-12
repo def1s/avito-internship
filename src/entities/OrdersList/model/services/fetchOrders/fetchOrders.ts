@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { IOrder } from 'shared/types';
 import { getOrdersListFilter } from '../../selectors/getOrdersListFilter/getOrdersListFilter';
+import { getOrdersListSort } from '../../selectors/getOrdersListSort/getOrdersListSort';
 
 export const fetchOrders =
 	createAsyncThunk<IOrder[], void, { rejectValue: string }>
@@ -11,11 +12,14 @@ export const fetchOrders =
 			try {
 				// @ts-expect-error нет типизации для thunk
 				const filter = getOrdersListFilter(thunkAPI.getState());
+				// @ts-expect-error нет типизации для thunk
+				const sort = getOrdersListSort(thunkAPI.getState());
 
 				const response =
 					await axios.get<IOrder[]>(`${__API_URL__}/orders`, {
 						params: {
-							status: filter
+							status: filter,
+							_sort: sort
 						}
 					});
 

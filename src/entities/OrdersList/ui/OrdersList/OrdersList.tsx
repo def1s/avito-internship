@@ -1,4 +1,5 @@
 import { FC, memo, useCallback } from 'react';
+import { SortSelector } from 'entities/OrdersList/ui/SortSelector/SortSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IOrder, IOrderStatus } from 'shared/types';
 import { Blur } from 'shared/ui/Blur/Blur';
@@ -67,7 +68,10 @@ export const OrdersList: FC<OrdersListProps> = memo((props: OrdersListProps) => 
 				</>
 			)}
 
-			<FilterSelector/>
+			<div className={cls.additionalWrapper}>
+				<FilterSelector/>
+				<SortSelector/>
+			</div>
 
 			{error && (
 				<Text

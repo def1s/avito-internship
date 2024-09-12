@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IOrder, IOrderStatus } from 'shared/types';
+import { SortKeys } from '../../lib/sort';
 import { fetchOrders } from '../services/fetchOrders/fetchOrders';
 import { OrdersListSchema } from '../types/ordersListSchema';
 
@@ -21,11 +22,17 @@ const ordersListSlice = createSlice({
 				state.orders[index] = action.payload; // обновляем заказ с новым значением
 			}
 		},
-		updateFilter: (state, action: PayloadAction<IOrderStatus>) => {
+		setFilter: (state, action: PayloadAction<IOrderStatus>) => {
 			state.filter = action.payload;
 		},
 		removeFilter: (state) => {
 			state.filter = undefined;
+		},
+		setSort: (state, action: PayloadAction<SortKeys>) => {
+			state.sort = action.payload;
+		},
+		removeSort: (state) => {
+			state.sort = undefined;
 		}
 	},
 	extraReducers: (builder) => {
