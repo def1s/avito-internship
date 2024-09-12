@@ -1,5 +1,4 @@
 import { Action, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
-import { Axios } from 'axios';
 import { CreateAdvertisementFormSchema } from 'features/CreateAdvertisement';
 import { EditAdvertisementFormSchema } from 'features/EditAdvertisement';
 import { AdvertisementDetailsSchema } from 'entities/AdvertisementDetails';

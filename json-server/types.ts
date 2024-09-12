@@ -19,18 +19,19 @@ type Advertisment = {
 
 
 const OrderStatus = {
-    Created: 0,
-    Paid: 1,
-    Transport: 2,
-    DeliveredToThePoint: 3,
-    Received: 4,
-    Archived: 5,
-    Refund: 6
+	Created: 0,
+	Paid: 1,
+	Transport: 2,
+	DeliveredToThePoint: 3,
+	Received: 4,
+	Archived: 5,
+	Refund: 6
 } as const;
 
 
 type OrderItem = Advertisment & { count: number; };
 
+// eslint-disable-next-line
 type Order = {
     /* Уникальный идентификатор. */
     id: string;
@@ -48,6 +49,7 @@ type Order = {
     total: number;
 }
 
+// eslint-disable-next-line
 type Image = {
     /* Уникальный идентификатор. */
     id: number;

@@ -1,3 +1,4 @@
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
 import { RoutesPaths } from 'app/providers/router/routerConfig/rounterConfig';
 
 export interface NavbarItemType {

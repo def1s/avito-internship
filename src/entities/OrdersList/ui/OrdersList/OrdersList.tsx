@@ -1,5 +1,4 @@
 import { FC, memo, useCallback } from 'react';
-import { SortSelector } from 'entities/OrdersList/ui/SortSelector/SortSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { IOrder, IOrderStatus } from 'shared/types';
 import { Blur } from 'shared/ui/Blur/Blur';
@@ -7,6 +6,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { FilterSelector } from '../FilterSelector/FilterSelector';
 import { OrdersItem } from '../OrdersItem/OrdersItem';
+import { SortSelector } from '../SortSelector/SortSelector';
 import cls from './OrdersList.module.scss';
 
 interface OrdersListProps {
