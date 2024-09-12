@@ -3,7 +3,7 @@ import { MAX_DESCRIPTION_LENGTH } from 'shared/const/variables';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { formatDate } from 'shared/lib/formatDate/formatDate';
 import { formatNumber } from 'shared/lib/formatNumber/formatNumber';
-import { textLengthValidator } from 'shared/lib/lengthValidators/textLengthValidator';
+import { textLengthValidator } from 'shared/lib/textLengthValidator/textLengthValidator';
 import { IAdvertisement } from 'shared/types';
 import { Image } from 'shared/ui/Image/Image';
 import { Loader } from 'shared/ui/Loader/Loader';
