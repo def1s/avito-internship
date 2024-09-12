@@ -259,27 +259,6 @@
       "views": 500,
       "likes": 50,
       "imageUrl": ""
-    },
-    {
-      "id": "0a19",
-      "name": "ыфвафывафыва",
-      "description": "",
-      "price": null,
-      "imageUrl": ""
-    },
-    {
-      "id": "9d05",
-      "name": "efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,",
-      "description": "efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,efasgdhfjgkh.lk.,",
-      "price": 45454,
-      "imageUrl": ""
-    },
-    {
-      "id": "d0a4",
-      "name": "sdfasdfdsafa sdfasdfdsafa sdfasdfdsafa sdfasdfdsafa",
-      "description": "",
-      "price": null,
-      "imageUrl": ""
     }
   ],
   "orders": [
@@ -316,7 +295,7 @@
     },
     {
       "id": "2",
-      "status": 4,
+      "status": 1,
       "createdAt": "2024-08-12T20:20:55.351Z",
       "total": 33000,
       "deliveryWay": "sdek",
